@@ -1,0 +1,37 @@
+@import "./constants.scss";
+
+// ..........................BUTTONS..............................
+._button {
+}
+._button:disabled,
+._button[disabled] {
+}
+._button:disabled:hover,
+._button[disabled]:hover {
+}
+// ......................SWIPER COMPONENTS..........................
+
+// ......................TECHNICAL CLASSES..........................
+._container {
+  max-width: ($container-l + px);
+  width: 100%;
+  padding: 0px 1rem;
+  margin: 0 auto;
+}
+._fixed {
+  overflow: hidden;
+}
+._section {
+  @include adaptive-value("padding-top", 80, 30, 0);
+  @include adaptive-value("padding-bottom", 80, 30, 0);
+}
+// ..........................ANIMATION..............................
+._hover {
+  @media (any-hover: hover) {
+    &:hover {
+    }
+  }
+}
+// ............................BURGER................................
+
+// ...........................POPUP................................

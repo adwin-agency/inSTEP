@@ -1,0 +1,51 @@
+@use "sass:math";
+
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff") format("woff"),
+      url("../fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+
+/* |Как использовать|
+Передаем в функцию параметры
+1 - css Свойство ($value_name)
+2* - макимальное значение свойства.($max_value)
+3* - минимальное значение свойства. ($min_value)
+4* - конечная миимальная ширина на которой свойство примет свое минимальное значение ($min_width),
+    если величина меньше ($minWidth - задается в _variables.scss как стандартное значение).
+5* - максимальная ширина с которой начнет адаптироваться свойство (по умолчанию равана $maxWidth - задается в _variables.scss как стандартное значение)
+
+* -- без учета едениц измерения (px)
+
+|ПРИМЕР @include adaptive-value('margin-right', 50, 20, 540);|
+*/
+
+@mixin adaptive-value(
+  $value_name,
+  $max_value,
+  $min_value,
+  $min_width: $minWidth,
+  $max_width: $maxWidth
+) {
+  //с мак суказанной границы до макс
+  @media (min-width: ($max_width + 1px)) {
+    #{$value_name}: $max_value + px;
+  }
+  //с мин разрешения до мин указанной границы
+  @media (max-width: ($min_width+px)) {
+    #{$value_name}: $min_value + px;
+  }
+  //с мин указанного до макс указанного
+  @media (min-width: ($min_width+px)) and (max-width: ($max_width+px)) {
+    #{$value_name}: calc(
+      #{$min_value + px} + #{($max_value - $min_value)} * ((
+              100vw - #{$min_width + px}
+            ) / #{($max_width - $min_width)})
+    );
+  }
+}
