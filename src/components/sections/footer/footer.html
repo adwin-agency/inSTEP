@@ -1,3 +1,50 @@
 <footer class="footer">
-  footer
+  <div class="footer__container _container">
+    <a class="footer__logo" href="/">
+      <img class="footer__logo-image" src="./@svg/logo-white.svg" alt="inSTEP">
+    </a>
+    <div class="footer__info">
+      <div class="footer__pay-icons">
+        @@include('../../UI/icon/icon.html', {
+        class: 'footer__pay-icon',
+        name: 'VISA-gray',
+        width: '60',
+        height: '20',
+        })
+        @@include('../../UI/icon/icon.html', {
+        class: 'footer__pay-icon',
+        name: 'MasterCard-gray',
+        width: '38',
+        height: '24',
+        })
+        @@include('../../UI/icon/icon.html', {
+        class: 'footer__pay-icon',
+        name: 'MIR-gray',
+        width: '69',
+        height: '20',
+        })
+      </div>
+      <a class="footer__policy _txt-s" href="http://" target="_blank" rel="noopener noreferrer">Политика
+        конфиденциальности</a>
+    </div>
+    <nav class="footer__nav">
+      <ul class="footer__list">
+        <li class="footer__item">
+          <a class="footer__link _txt-s" href="#">О компании</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link _txt-s" href="#">Виды протезов</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link _txt-s" href="#">изготовление</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link _txt-s" href="#">сообщество</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link _txt-s" href="#">Контакты</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </footer>

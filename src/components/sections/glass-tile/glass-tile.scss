@@ -1,0 +1,156 @@
+.glass-tile {
+  @include adaptive-value("margin-top", 77, 58, $xxs);
+  @include adaptive-value("margin-bottom", 287, 100, $xxs);
+
+  // .glass-tile__container
+  &__container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+
+    @media (min-width: ($s+px)) {
+      grid-auto-rows: minmax(257px, 1fr);
+    }
+  }
+
+  // .glass-tile__card
+
+  &__card {
+  }
+
+  &__bg-icon {
+    position: absolute;
+    transform: scale(7);
+    z-index: -1;
+    &_purple {
+      left: 18%;
+      top: 32%;
+      transform: scale(8);
+      @media (max-width: ($m+px)) {
+        left: 60%;
+        top: 5%;
+      }
+    }
+    &_yellow {
+      left: 36%;
+      top: 88%;
+      @media (max-width: ($m+px)) {
+        left: 0%;
+        top: 50%;
+      }
+    }
+    &_aqua {
+      left: 60%;
+      top: 35%;
+      transform: scale(10);
+      @media (max-width: ($m+px)) {
+        left: 0%;
+        top: 70%;
+        transform: scale(9);
+      }
+    }
+  }
+}
+
+.glass-tile-card {
+  display: flex;
+  flex-direction: column;
+  padding-top: 36px;
+  padding-bottom: 30px;
+
+  @include adaptive-value("padding-left", 56, 15, $xxs);
+  @include adaptive-value("padding-right", 56, 15, $xxs);
+
+  @media (max-width: ($m+px)) {
+    grid-column-start: span 2;
+  }
+  @media (max-width: ($xs+px)) {
+    grid-column-start: span 4;
+  }
+  @media (min-width: ($s+px)) {
+    justify-content: end;
+  }
+
+  // .glass-tile-card_size-l
+  &_size-l {
+    grid-column-start: span 2;
+    @include adaptive-value("padding-bottom", 50, 30, $xxs);
+    & .glass-tile-card__text {
+      max-width: 725px;
+    }
+    @media (max-width: ($m+px)) {
+      grid-column-start: span 4;
+    }
+  }
+
+  // .glass-tile-card__combine-box
+  &__combine-box {
+    display: flex;
+    @include adaptive-value("gap", 40, 24, $xxs);
+    @media (max-width: ($l+px)) {
+      flex-wrap: wrap;
+    }
+  }
+
+  // .glass-tile-card__points
+
+  &__points {
+    position: relative;
+    z-index: $zIndex-s;
+    display: flex;
+    gap: 6px;
+    margin-bottom: 30px;
+  }
+
+  // .glass-tile-card__point
+
+  &__point {
+    width: 12px;
+    height: 12px;
+    background-color: $color-white;
+    border-radius: 50%;
+
+    &_purple {
+      background-color: $color-purple;
+    }
+    &_orange {
+      background-color: $color-orange;
+    }
+  }
+
+  // .glass-tile-card__title
+
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    position: relative;
+    z-index: $zIndex-s;
+    color: $color-main-blue;
+    @media (min-width: ($s+px)) {
+      margin-top: auto;
+    }
+  }
+
+  // .glass-tile-card__text
+
+  &__text {
+    position: relative;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+    z-index: $zIndex-s;
+    max-width: 355px;
+    margin-top: 9px;
+    color: $color-main-blue;
+  }
+
+  &__button {
+    position: relative;
+    z-index: $zIndex-s;
+    @media (min-width: ($xs+px)) {
+      max-width: 240px;
+    }
+  }
+}

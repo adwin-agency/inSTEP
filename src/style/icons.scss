@@ -27,6 +27,31 @@
     display: block;
   }
 }
+
+._icon-close:before {
+  content: "\e912";
+}
+._icon-instagram:before {
+  content: "\e913";
+}
+._icon-whatsapp:before {
+  content: "\e914";
+}
+._icon-warning:before {
+  content: "\e915";
+}
+._icon-Hashtag-Marker:before {
+  content: "\e911";
+}
+._icon-play:before {
+  content: "\e910";
+}
+._icon-arrow-right:before {
+  content: "\e90e";
+}
+._icon-arrow-left:before {
+  content: "\e90f";
+}
 ._icon-hip-prosthesis:before {
   content: "\e900";
 }

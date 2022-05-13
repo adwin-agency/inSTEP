@@ -1,12 +1,12 @@
 <header class="header">
   <div class="header__wrapper _container">
     @@include('../../UI/burger/burger.html', {
-    class: 'header__burger burger _burger',
+    class: 'header__burger _burger',
     })
     <a class="header__logo" href="/">
       <picture class="header__logo-icon">
-        <source media="(min-width: 780px)" srcset="@svg/logo.svg">
-        <img src="@svg/logo-mobile.svg" alt="inSTEP">
+        <source media="(min-width: 1024.5px)" srcset="@svg/logo.svg">
+        <img src="./@svg/logo-mobile.svg" alt="inSTEP">
       </picture>
     </a>
 
@@ -35,12 +35,14 @@
         <p class="header__phone-footnote">ежедневно с 10 до 17</p>
       </div>
 
-      <button class="header__button button">
-        бесплатная консультация
-      </button>
+      @@include('../../UI/button/button.html', {
+      class: 'header__button',
+      text: 'бесплатная консультация',
+      type: 'button'
+      })
     </nav>
     <a class="header__phone-icon" href="tel:+7 812 416 08 68">
-      <img src="@svg/phone.svg" alt="phone">
+      <img src="./@svg/phone.svg" alt="phone">
     </a>
   </div>
 </header>

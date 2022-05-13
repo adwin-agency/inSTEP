@@ -22,6 +22,7 @@ export const otfToTtf = () =>
     )
     // Выгружаем в исходную папку
     .pipe(app.gulp.dest(`${app.path.srcFolder}/fonts/`));
+
 export const ttfToWoff = () =>
   // Ищем шрифты с расширением .ttf
   app.gulp

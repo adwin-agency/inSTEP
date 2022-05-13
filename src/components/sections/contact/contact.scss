@@ -1,0 +1,214 @@
+.contact {
+  @include adaptive-value("margin-top", 200, 86, $xxs);
+  @include adaptive-value("margin-bottom", 86, 32, $xxs);
+
+  // .contact__container
+
+  &__container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1.2fr;
+    @include adaptive-value("gap", 225, 24, $s);
+    @media (max-width: ($m+px)) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // .contact__box
+
+  &__box {
+  }
+
+  // .contact__title
+
+  &__title {
+    display: inline-block;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    position: relative;
+    @include adaptive-value("margin-bottom", 34, 16, $xxs);
+    &::before {
+      position: absolute;
+      right: 0;
+      top: 0;
+      color: $color-purple;
+      font-size: 114px;
+      transform: translate(95%, -95%) rotate(-180deg) scale(-1, 1);
+      z-index: -1;
+      @media (max-width: ($s+px)) {
+        font-size: 90px;
+        transform: translate(0%, -91%) rotate(-180deg) scale(-1, 1);
+      }
+    }
+  }
+
+  // .contact__subtitle
+
+  &__subtitle {
+    font-style: normal;
+    font-weight: 600;
+    line-height: 160%;
+  }
+
+  // .contact__form
+
+  &__form {
+    @include adaptive-value("margin-top", 72, 48, $xxs);
+  }
+
+  // .contact__form-footer
+
+  &__form-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    @include adaptive-value("gap", 36, 20, $xxs);
+    @include adaptive-value("margin-top", 28, 18, $xxs);
+    @media (max-width: ($xs+px)) {
+      flex-direction: column;
+    }
+  }
+
+  // .contact__form-button
+  &__form-button {
+    @media (min-width: ($xs+px)) {
+      max-width: 224px;
+    }
+  }
+  // .contact__policy
+
+  &__policy {
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+    color: $color-txt-extra;
+    max-width: 405px;
+  }
+
+  // .contact__glass-container
+
+  &__glass-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include adaptive-value("gap", 70, 36, $xxs);
+    @include adaptive-value("padding-top", 80, 50, $xxs);
+    @include adaptive-value("padding-bottom", 65, 30, $xxs);
+    @include adaptive-value("padding-left", 101, 20, $xxs);
+    @include adaptive-value("padding-right", 40, 20, $xxs);
+    @media (min-width: ($s+px)) and (max-width: ($m+px)) {
+      flex-direction: row;
+      align-items: center;
+    }
+    @media (min-width: ($m+px)) {
+      max-width: 520px;
+    }
+  }
+
+  // .contact__glass-box
+
+  &__glass-box {
+    position: relative;
+    z-index: $zIndex-s;
+    @media (min-width: ($s+px)) and (max-width: ($m+px)) {
+      width: 33.333%;
+    }
+  }
+
+  // .contact__value
+
+  &__value {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 110%;
+  }
+
+  // .contact__footnote
+
+  &__footnote {
+    font-style: normal;
+    font-weight: 300;
+    line-height: 160%;
+    color: $color-txt-extra;
+    margin-top: 9px;
+  }
+
+  // .contact__glass-text
+
+  &__glass-text {
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    margin-bottom: 9px;
+  }
+
+  // .contact__social-box
+
+  &__social-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+  }
+
+  // .contact__social-box-icon
+
+  &__social-box-icon {
+    font-size: 40px;
+    color: $color-white;
+    transition: $transitionNormal;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $color-bth-hover;
+      }
+    }
+  }
+  // .contact__interactive-icon
+  &__interactive-icon {
+    position: absolute;
+
+    z-index: -1;
+    &_yellow {
+      top: 19%;
+      left: -2%;
+      width: 480px;
+      height: 542px;
+      filter: blur(100px);
+      @media (max-width: ($m+px)) {
+        top: 2%;
+        left: -26%;
+        width: 513px;
+        height: 567px;
+        filter: blur(126px);
+      }
+    }
+    &_purple {
+      top: -17%;
+      right: 10%;
+      width: 342px;
+      height: 793px;
+      filter: blur(77px);
+      @media (max-width: ($m+px)) {
+        top: unset;
+        bottom: -30%;
+        left: 10%;
+        transform: rotate(-90deg);
+      }
+      @media (max-width: ($s+px)) {
+        bottom: -15%;
+      }
+    }
+    &_green {
+      filter: blur(121px);
+      bottom: -10%;
+      right: 10%;
+      width: 242px;
+      height: 350px;
+      @media (max-width: ($m+px)) {
+        right: 0;
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}

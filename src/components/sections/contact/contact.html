@@ -1,0 +1,82 @@
+<section class="contact">
+  <div class="contact__container _container">
+
+    <div class="contact__box">
+      <h2 class="contact__title _h2 _icon-Talk-Bubble-Marker">Остались вопросы?
+        Напишите нам!</h2>
+      <p class="contact__subtitle _txt-l ">Если у вас остались вопросы о нашей работе или вы готовы сделать заказ,
+        заполните
+        форму
+        ниже и наш специалист свяжется с
+        вами в ближайшее время</p>
+
+      <form class="contact__form" name="contacts">
+        <div class="_form-twice">
+          <label class="_lable _icon-warning">
+            <span class="_lable-title _txt-s">Представьтесь</span>
+            <input class="_input _txt-m" type="text" name="name" required>
+            <span class="_input-error _txt-s">Обязательное поле</span>
+          </label>
+          <label class="_lable _icon-warning">
+            <span class="_lable-title _txt-s">Контактный телефон</span>
+            <input class="_input _txt-m" type="tel" name="phone" required>
+            <span class="_input-error _txt-s">Обязательное поле</span>
+          </label>
+        </div>
+        <label class="_lable">
+          <span class="_lable-title _txt-s">Комментарий или вопрос (необязательно)</span>
+          <textarea class="_textarea _txt-m" cols="25" rows="2" type="text" name="description"></textarea>
+        </label>
+        <div class="contact__form-footer">
+          <p class="contact__policy _txt-s">Нажимая кнопку "Отправить", вы соглашаетесь с <a href="#" target="_blank"
+              rel="noopener noreferrer">Политикой конфиденциальности</a></p>
+          @@include('../../UI/button/button.html', {
+          class: 'contact__form-button',
+          text: 'ОТправить',
+          type: 'submit'
+          })
+        </div>
+      </form>
+
+    </div>
+
+    <div class="contact__box">
+      <div class="contact__glass-container _glass-card _glass-card_b-14">
+        <div class="contact__glass-box">
+          <p class="contact__value _h4">197229, Санкт-Петербург, улица Колхозная 30А, территория Лахты.</p>
+          <p class="contact__footnote _txt-m ">ежедневно с 10 до 17</p>
+        </div>
+        <div class="contact__glass-box">
+          <p class="contact__value _h4">+7 (812) 416-08-68</p>
+          <p class="contact__footnote _txt-m ">телефон отдела продаж</p>
+        </div>
+        <div class="contact__glass-box">
+          <p class="contact__glass-text _txt-l">Мы в сети</p>
+          <div class="contact__social-box">
+            <a class="contact__social-box-icon _icon-youtube" href="#" target="_blank" rel="noopener noreferrer"></a>
+            <a class="contact__social-box-icon _icon-telegram" href="#" target="_blank" rel="noopener noreferrer"></a>
+            <a class="contact__social-box-icon _icon-vk" href="#" target="_blank" rel="noopener noreferrer"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    @@include('../../UI/icon/icon.html', {
+    class: 'contact__interactive-icon contact__interactive-icon_yellow',
+    name: 'Rectangle-65',
+    width: '',
+    height: '',
+    })
+    @@include('../../UI/icon/icon.html', {
+    class: 'contact__interactive-icon contact__interactive-icon_purple',
+    name: 'Rectangle-103',
+    width: '',
+    height: '',
+    })
+    @@include('../../UI/icon/icon.html', {
+    class: 'contact__interactive-icon contact__interactive-icon_green',
+    name: 'Rectangle-66',
+    width: '',
+    height: '',
+    })
+  </div>
+</section>

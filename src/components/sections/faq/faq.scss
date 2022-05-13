@@ -1,0 +1,167 @@
+.faq {
+  @include adaptive-value("margin-top", 176, 95, $xxs);
+  @include adaptive-value("margin-bottom", 200, 86, $xxs);
+
+  // .faq__container
+
+  &__container {
+    position: relative;
+  }
+
+  // .faq__title
+
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    line-height: 90%;
+    text-align: center;
+    color: $color-main-blue;
+    @include adaptive-value("margin-bottom", 92, 40, $xxs);
+  }
+
+  // .faq__body
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @include adaptive-value("gap", 80, 40, $m);
+    @media (max-width: ($m+px)) {
+      gap: 0;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // .faq__column
+
+  &__column {
+    &:first-child {
+      border-top: 2px solid #eaeaea;
+    }
+    @media (min-width: ($m+px)) {
+      border-top: 2px solid #eaeaea;
+    }
+  }
+
+  // .faq__interactive-icon
+
+  &__interactive-icon {
+    position: absolute;
+    left: 7%;
+    top: 81px;
+    transform: scale(9);
+    z-index: -1;
+  }
+}
+
+.accordion {
+  // .accordion__item
+
+  &__item {
+    cursor: pointer;
+    border-bottom: 2px solid #eaeaea;
+    @include adaptive-value("padding-left", 40, 0, $s);
+    &.is-active {
+      .accordion__button {
+        &::after {
+          transform: rotate(180deg);
+        }
+      }
+      .accordion__body {
+        @include adaptive-value("margin-bottom", 40, 30, $xxs);
+      }
+      .accordion__header {
+        padding-bottom: 0;
+        // margin-bottom: 20px;
+      }
+    }
+  }
+
+  // .accordion__header
+
+  &__header {
+    transition: $transitionNormal;
+    @include adaptive-value("padding-top", 50, 30, $xxs);
+    @include adaptive-value("padding-bottom", 40, 30, $xxs);
+    gap: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  // .accordion__title
+
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+    color: $color-main-blue;
+  }
+
+  // .accordion__button
+
+  &__button {
+    flex-shrink: 0;
+    position: relative;
+    width: 34px;
+    height: 34px;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-color: $color-main-blue;
+    }
+    &::after {
+      transition: $transitionLight;
+      transform: rotate(90deg);
+    }
+  }
+
+  // .accordion__body
+
+  &__body {
+    position: relative;
+  }
+
+  // .accordion__text
+
+  &__text {
+    font-style: normal;
+    font-weight: 300;
+    line-height: 160%;
+    @include adaptive-value("margin-top", 20, 15, $xxs);
+  }
+
+  // .accordion__list
+
+  &__list {
+    @include adaptive-value("margin-top", 37, 20, $xxs);
+  }
+
+  // .accordion__list-item
+
+  &__list-item {
+    position: relative;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 140%;
+    @include adaptive-value("margin-top", 20, 16, $xxs);
+    @include adaptive-value("margin-left", 42, 0, $xxs);
+    @include adaptive-value("padding-left", 32, 20, $xxs);
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 8px;
+      height: 8px;
+      background-color: $color-main-blue;
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}

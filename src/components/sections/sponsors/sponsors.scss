@@ -1,0 +1,15 @@
+.sponsors {
+  // .sponsors__contianer
+  @include adaptive-value("margin-top", 150, 44, $xxs);
+  @include adaptive-value("margin-bottom", 200, 95, $xxs);
+  &__contianer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    @include adaptive-value("gap", 67, 33, $m);
+  }
+  &__icon {
+    width: auto;
+  }
+}

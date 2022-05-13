@@ -9,21 +9,378 @@
 ._button:disabled:hover,
 ._button[disabled]:hover {
 }
-// ......................SWIPER COMPONENTS..........................
+._button-play {
+  position: relative;
+  color: inherit;
+  z-index: $zIndex-s;
+  font-size: 30px;
+  width: 34px;
+  height: 34px;
+  transition: $transitionLight;
+  &:active {
+    &::before {
+      transition: 0.1s;
+      transform: translate(-50%, -50%) scale(0.96);
+    }
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      transform: scale(1.1);
+      &::after {
+        animation: absolute-rotate 15s infinite linear;
+      }
+    }
+  }
+  &::after,
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &::after {
+    content: "";
+    width: 64px;
+    height: 64px;
+    border: 1px dashed;
+    border-radius: 50%;
+    transition: 0.7s;
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    z-index: -1;
+  }
+  &::before {
+    width: 42px;
+    height: 42px;
+    border: 1px dashed;
+    border-radius: 50%;
+    transition: 0.4s;
+  }
+}
+._button-play_m {
+  position: relative;
+  color: inherit;
+  z-index: $zIndex-s;
+  font-size: 30px;
+  width: 34px;
+  height: 34px;
+  transition: $transitionLight;
+  &:active {
+    &::before {
+      transition: 0.1s;
+      transform: translate(-50%, -50%) scale(0.96);
+    }
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      transform: scale(1.1);
+      &::after {
+        animation: absolute-rotate 15s infinite linear;
+      }
+    }
+  }
+  &::after,
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &::after {
+    content: "";
+    width: 102px;
+    height: 102px;
+    border: 1px dashed;
+    border-radius: 50%;
+    transition: 0.7s;
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    z-index: -1;
+  }
+  &::before {
+    width: 42px;
+    height: 42px;
+    border: 1px dashed;
+    border-radius: 50%;
+    transition: 0.4s;
+  }
+}
+._button-play_l {
+  position: relative;
+  color: inherit;
+  z-index: $zIndex-s;
+  font-size: 30px;
+  width: 34px;
+  height: 34px;
+  padding: 21px 21px 21px 20px;
+  border: 1px dashed;
+  border-radius: 50%;
+  transition: $transitionLight;
+  &:active {
+    &::before {
+      transition: 0.1s;
+      transform: translate(-50%, -50%) scale(0.96);
+    }
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      transform: scale(1.1);
+      &::after {
+        animation: absolute-rotate 25s infinite linear;
+      }
+    }
+  }
+  &::after,
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: $transitionLight;
+  }
+  &::before {
+    @include adaptive-value("width", 148, 114, $xs);
+    @include adaptive-value("height", 148, 114, $xs);
+    border: 1px solid #c5c5c5;
+    border-radius: 50%;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    @include adaptive-value("width", 170, 130, $xs);
+    @include adaptive-value("height", 170, 130, $xs);
+    border: 1px dashed;
+    border-radius: 50%;
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    z-index: -1;
+  }
+}
 
+._button-play_l-adaptive {
+  position: relative;
+  color: inherit;
+  z-index: $zIndex-s;
+  font-size: 30px;
+  width: 34px;
+  height: 34px;
+  padding: 21px 21px 21px 20px;
+  border: 1px dashed;
+  border-radius: 50%;
+  transition: $transitionLight;
+  &:active {
+    &::before {
+      transition: 0.1s;
+      transform: translate(-50%, -50%) scale(0.96);
+    }
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      transform: scale(1.1);
+      &::after {
+        animation: absolute-rotate 25s infinite linear;
+      }
+    }
+  }
+  &::after,
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: $transitionLight;
+  }
+  &::before {
+    @media (min-width: ($xs+px)) {
+      @include adaptive-value("width", 148, 62, $xs);
+      @include adaptive-value("height", 148, 62, $xs);
+      border: 1px solid #c5c5c5;
+      border-radius: 50%;
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    @include adaptive-value("width", 170, 62, $xs);
+    @include adaptive-value("height", 170, 62, $xs);
+    border: 1px dashed;
+    border-radius: 50%;
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    z-index: -1;
+  }
+}
+// ......................SWIPER COMPONENTS..........................
+._swiper-settings {
+  &_full-on-mobile {
+    @media (max-width: ($xs+px)) {
+      margin-left: -1rem;
+      margin-right: -1rem;
+    }
+    @media (max-width: ($xxs+px)) {
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+  }
+  &_auto-width {
+    & .swiper-slide {
+      width: auto;
+    }
+  }
+  &_auto-width-desctop {
+    @media (min-width: ($xs+px)) {
+      & .swiper-slide {
+        width: auto;
+      }
+    }
+  }
+}
+._slider-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  z-index: $zIndex-m;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+._slider-button {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  font-size: 17px;
+  pointer-events: auto;
+  // .slider-button_left
+  &_left {
+    transform: translateX(-60%);
+    background: linear-gradient(to left, $color-white 50%, transparent 50%);
+    &::before {
+      text-align: end;
+      padding-right: 8px;
+    }
+  }
+
+  // .slider-button_right
+
+  &_right {
+    transform: translateX(60%);
+    background: linear-gradient(to right, $color-white 50%, transparent 50%);
+    &::before {
+      text-align: start;
+      padding-left: 8px;
+    }
+  }
+}
 // ......................TECHNICAL CLASSES..........................
 ._container {
   max-width: ($container-l + px);
   width: 100%;
   padding: 0px 1rem;
   margin: 0 auto;
+  @media (max-width: ($xxs+px)) {
+    padding: 0px 10px;
+  }
 }
 ._fixed {
   overflow: hidden;
 }
-._section {
-  @include adaptive-value("padding-top", 80, 30, 0);
-  @include adaptive-value("padding-bottom", 80, 30, 0);
+._overflow-x {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+// ._section {
+//   @include adaptive-value("padding-top", 80, 30, $xxs);
+//   @include adaptive-value("padding-bottom", 80, 30, $xxs);
+// }
+._glass-card {
+  border-radius: 20px;
+  position: relative;
+
+  // border: 2px solid transparent;
+  background: linear-gradient(
+    126.6deg,
+    rgba(255, 255, 255, 0.3) 28.69%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  backdrop-filter: blur(90px);
+
+  &_b-14 {
+    &::after {
+      background-image: url("../icons/glassy-card-border-14.svg");
+    }
+  }
+  &_b-20 {
+    &::after {
+      background-image: url("../icons/glassy-card-border-20.svg");
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+    pointer-events: none;
+  }
+}
+// ......................TEXTS..........................
+._h1 {
+  @include adaptive-value("font-size", 60, 30, $xxs);
+}
+._h2 {
+  @include adaptive-value("font-size", 40, 28, $xxs);
+}
+._h3 {
+}
+._h4 {
+  @include adaptive-value("font-size", 22, 18, $xxs);
+}
+._h5 {
+}
+._txt-s {
+  @include adaptive-value("font-size", 14, 13, $xxs);
+}
+._txt-m {
+  @include adaptive-value("font-size", 16, 14, $xxs);
+}
+._txt-l {
+  @include adaptive-value("font-size", 20, 16, $xxs);
+}
+._txt-accent-blue {
+  color: $color-main-blue;
 }
 // ..........................ANIMATION..............................
 ._hover {
@@ -32,6 +389,118 @@
     }
   }
 }
-// ............................BURGER................................
+@keyframes newsticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes absolute-rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+// ............................ACCORDION................................
+.ac-panel {
+  overflow: hidden;
+  height: 0;
+}
+// ...........................FORM................................
 
-// ...........................POPUP................................
+// ._form-twice
+._form-twice {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 27px;
+  @media (max-width: ($xs+px)) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ._lable
+._lable {
+  position: relative;
+  margin-top: 35px;
+  border-bottom: 1px solid $color-main-blue;
+  display: flex;
+  flex-direction: column;
+  padding-left: 7px;
+  gap: 15px;
+
+  &::before {
+    position: absolute;
+    bottom: 10px;
+    z-index: $zIndex-s;
+    color: $color-warning;
+    opacity: 0;
+    @include adaptive-value("font-size", 24, 20, $xxs);
+    @include adaptive-value("right", 20, 7, $xxs);
+    transition: $transitionLight;
+  }
+
+  // ._lable__title
+  &-title {
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    color: $color-main-blue;
+  }
+
+  // ._lable _error
+  &._error {
+    border-bottom: 1px solid $color-warning;
+    &::before {
+      opacity: 1;
+    }
+    & ._input-error {
+      opacity: 1;
+      transform: translateY(102%);
+    }
+  }
+}
+
+// ._input
+._input {
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  z-index: 2;
+  transition: $transitionLight;
+  background: transparent;
+  @include adaptive-value("padding-right", 55, 35, $xxs);
+}
+
+// ._input-error
+._input-error {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(0);
+  text-align: right;
+  color: $color-warning;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  transition: $transitionLight;
+}
+
+// ._textarea
+._textarea {
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  resize: none;
+  transition: $transitionLight;
+  background-color: transparent;
+}

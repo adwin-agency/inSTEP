@@ -5,7 +5,6 @@ import cleanCss from "gulp-clean-css";
 import webpcss from "gulp-webpcss";
 import autoPrefixer from "gulp-autoprefixer";
 import gulpGroupCssMediaQueries from "gulp-group-css-media-queries";
-
 const sass = gulpSass(dartSass);
 
 export const style = () =>
@@ -47,7 +46,7 @@ export const style = () =>
       )
     )
     .pipe(app.gulp.dest(app.path.build.css)) // не сжатый
-    .pipe(app.plugins.if(app.isBuild, cleanCss()))
+    .pipe(cleanCss())
     .pipe(
       rename({
         extname: ".build.css",

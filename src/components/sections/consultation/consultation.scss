@@ -1,0 +1,71 @@
+.consultation {
+  // .consultation__container
+  &__container {
+    @include adaptive-value("padding-top", 200, 57, $xxs);
+    @include adaptive-value("padding-bottom", 100, 50, $xxs);
+    position: relative;
+    background-image: url("../images/consultation/background.jpg");
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  // .consultation__description
+  &__description {
+    position: relative;
+    max-width: 771px;
+    z-index: $zIndex-s;
+  }
+  // .consultation__title
+
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    line-height: 90%;
+    @media (max-width: ($s+px)) {
+      text-align: center;
+    }
+  }
+  // .consultation__wave-icon
+  &__wave-icon {
+    position: absolute;
+    top: 32%;
+    right: 0;
+    max-height: 866px;
+    max-width: 80px;
+    width: 100%;
+    height: 100%;
+    @media (max-width: ($s+px)) {
+      top: 10%;
+    }
+  }
+  // .consultation__star-icon
+  &__star-icon {
+    position: absolute;
+    right: 4%;
+    bottom: -9%;
+    transform: scale(5);
+  }
+  // .consultation__title-accent
+
+  &__title-accent {
+  }
+
+  // .consultation__text
+
+  &__text {
+    @include adaptive-value("margin-top", 35, 22, $xxs);
+    @media (max-width: ($s+px)) {
+      text-align: center;
+    }
+  }
+  // .consultation__button
+  &__button {
+    max-width: 358px;
+    @include adaptive-value("margin-top", 52, 48, $xxs);
+    @media (max-width: ($s+px)) {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

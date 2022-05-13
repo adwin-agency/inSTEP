@@ -1,0 +1,215 @@
+.intro {
+  @include adaptive-value("margin-top", 136, 90, $xxs);
+
+  // .intro__container
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    @media (max-width: ($m+px)) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // .intro__title
+
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    line-height: 90%;
+    max-width: 747px;
+    color: $color-black;
+
+    // .intro__title_accent
+
+    &_accent {
+    }
+  }
+
+  // .intro__subtitle
+
+  &__subtitle {
+    font-style: normal;
+    font-weight: 600;
+    line-height: 160%;
+    max-width: 595px;
+    color: $color-txt-extra;
+    @include adaptive-value("margin-top", 23, 12, $xxs);
+  }
+
+  // .intro__pay-info-plate
+
+  &__pay-info-plate {
+    @include adaptive-value("margin-top", 53, 23, $xxs);
+  }
+
+  // .intro__advantages
+
+  &__advantages {
+    display: flex;
+    @include adaptive-value("gap", 81, 20, 0);
+    @include adaptive-value("margin-top", 80, 44, $xxs);
+    @media (max-width: ($xxs+px)) {
+      flex-direction: column;
+    }
+    &_desctop {
+      @media (max-width: ($m+px)) {
+        display: none;
+      }
+    }
+    &_mobile {
+      @media (min-width: ($m+px)) {
+        display: none;
+      }
+    }
+  }
+
+  // .intro__advantages-box
+
+  &__advantages-box {
+    max-width: 190px;
+  }
+
+  // .intro__advantages-title
+
+  &__advantages-title {
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+  }
+
+  // .intro__advantages-text
+
+  &__advantages-text {
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+
+  // .intro__description
+
+  &__description {
+    @include adaptive-value("margin-top", 75, 0, $s);
+  }
+  // .intro__interactive
+
+  &__interactive {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.3fr 0.1fr 1fr;
+    grid-auto-rows: auto;
+  }
+
+  // .intro__image-box
+
+  &__image-box {
+    position: relative;
+    &_grid-lt {
+      grid-area: 1/1/3/3;
+    }
+    &_grid-br {
+      grid-area: 2/2/4/4;
+    }
+  }
+
+  // .intro__image
+
+  &__image {
+    filter: drop-shadow(0px 5px 29px rgba(0, 0, 0, 0.15));
+
+    &_border-tr-bl {
+      @include adaptive-value("border-top-right-radius", 173, 60, $xxs);
+      @include adaptive-value("border-bottom-left-radius", 173, 60, $xxs);
+    }
+    &_border-tl-br {
+      @include adaptive-value("border-bottom-right-radius", 132, 50, $xxs);
+      @include adaptive-value("border-top-left-radius", 132, 50, $xxs);
+    }
+  }
+
+  // .intro__circle-icon
+
+  &__circle-icon {
+    margin-bottom: 15px;
+    margin-left: 15px;
+    @include adaptive-value("max-width", 130, 60, $xxs);
+    @include adaptive-value("max-height", 130, 60, $xxs);
+  }
+  //intro__smile-icon
+  &__smile-icon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    &::before {
+      @include adaptive-value("font-size", 120, 60, $xxs);
+      color: $color-white;
+    }
+  }
+  // .intro__social-box
+
+  &__social-box {
+    margin-top: 14px;
+    margin-right: 14px;
+  }
+  // intro__interactive-icon
+  &__interactive-icon {
+    &_star {
+      position: absolute;
+      top: 7%;
+      right: 11%;
+      transform: scale(4);
+      z-index: -1;
+    }
+    &_rct {
+      position: absolute;
+      bottom: 3%;
+      left: 11%;
+      transform: scale(5) rotate(34deg);
+      z-index: -1;
+    }
+  }
+}
+.pay-info-plate {
+  // .pay-info-plate__icon-box
+  background: #fafafa;
+  box-shadow: inset 0px 0px 18px rgba(0, 0, 0, 0.07);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 6px;
+  @include adaptive-value("border-radius", 40, 30, $xxs);
+  @media (max-width: ($s+px)) {
+    flex-direction: column;
+  }
+  @media (min-width: ($s+px)) {
+    max-width: 503px;
+  }
+  &__icon-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    @media (min-width: ($s+px)) {
+      margin-left: 20px;
+    }
+  }
+
+  // .pay-info-plate__button
+
+  &__button {
+    font-family: "Comfortaa";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 110%;
+    text-align: center;
+    background: #ffffff;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 40px;
+    padding: 14px 30px;
+  }
+}

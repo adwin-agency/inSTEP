@@ -1,0 +1,208 @@
+.popup-card {
+  // .popup-card__container
+  overflow-y: auto;
+  &__container {
+    position: relative;
+    max-width: 1500px;
+    width: 100%;
+
+    @include adaptive-value("padding-top", 63, 16, $xxs);
+    @include adaptive-value("padding-bottom", 56, 16, $xxs);
+    @include adaptive-value("padding-left", 70, 10, $xxs);
+    @media (min-width: ($m+px)) {
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+  }
+
+  // .popup-card__body
+
+  &__body {
+    display: grid;
+    margin-top: 70px;
+    grid-template-columns: minmax(0, 1fr);
+    @include adaptive-value("gap", 110, 37, $xs);
+    @media (min-width: ($s+px)) {
+      margin-top: unset;
+      grid-template-columns: minmax(0, 0.7fr) minmax(0, 1fr);
+    }
+    @media (min-width: ($l+px)) {
+      grid-template-columns: minmax(0, 0.46fr) minmax(0, 1fr);
+    }
+  }
+
+  // .popup-card__close
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 34px;
+    height: 34px;
+    font-size: 17px;
+    color: $color-main-blue;
+    z-index: $zIndex-s;
+    &::before {
+      pointer-events: none;
+    }
+  }
+
+  // .popup-card__info
+
+  &__info {
+  }
+
+  // .popup-card__title
+
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+  }
+
+  // .popup-card__text
+
+  &__text {
+    font-style: normal;
+    font-weight: 300;
+    line-height: 160%;
+    @include adaptive-value("margin-top", 23, 14, $xxs);
+  }
+
+  // .popup-card__button
+  &__button {
+    @include adaptive-value("margin-top", 34, 25, $s);
+    @media (min-width: ($xs+px)) {
+      max-width: 335px;
+    }
+  }
+
+  // .popup-card__specifications
+
+  &__specifications {
+    display: flex;
+    flex-direction: column;
+    @include adaptive-value("gap", 26, 20, $xxs);
+    @include adaptive-value("margin-top", 52, 22, $xxs);
+  }
+
+  // .popup-card__specifications-row
+
+  &__specifications-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    @media (min-width: ($l+px)) {
+      grid-template-columns: 1fr 3fr;
+    }
+  }
+
+  // .popup-card__specifications-name
+
+  &__specifications-name {
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    color: $color-txt-extra;
+  }
+
+  // .popup-card__specifications-box
+
+  &__specifications-box {
+  }
+
+  // .popup-card__specifications-value
+
+  &__specifications-value {
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+    color: $color-txt-extra;
+  }
+
+  // .popup-card__interactive
+
+  &__interactive {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  // .popup-card__main-slider
+
+  &__main-slider {
+    position: relative;
+    height: 514px;
+    @include adaptive-value("height", 514, 286, $xxs);
+    overflow: hidden;
+  }
+
+  // .popup-card__main-slide
+
+  &__main-slide {
+    @include adaptive-value("border-radius", 20, 14, $xxs);
+    overflow: hidden;
+  }
+
+  // .popup-card__slider-controls
+
+  &__slider-controls {
+  }
+
+  // .popup-card__slider-btn-l
+
+  &__slider-btn-l {
+  }
+
+  // .popup-card__slider-btn-r
+
+  &__slider-btn-r {
+  }
+
+  // .popup-card__duplicate-slider
+
+  &__duplicate-slider {
+    height: 74px;
+    overflow: hidden;
+  }
+
+  // .popup-card__duplicate-slide
+
+  &__duplicate-slide {
+    position: relative;
+    cursor: pointer;
+    @media (any-hover: hover) {
+      &:hover::before {
+        // color: $color-bth-hover;
+        transform: translate(-50%, -50%) scale(1.15);
+      }
+    }
+    &::before {
+      transition: $transitionLight;
+      position: absolute;
+      font-size: 30px;
+      color: $color-white;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: $zIndex-s;
+    }
+  }
+}
+._popup-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(61, 78, 129, 0.4);
+  @media (max-width: ($s+px)) {
+    align-items: flex-start;
+  }
+}
+._popup-content {
+  background-color: $color-white;
+}

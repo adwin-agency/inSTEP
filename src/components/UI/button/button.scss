@@ -1,0 +1,30 @@
+.button {
+  font-family: $fontFamily;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 130%;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  box-shadow: 0px 30px 14px -20px rgba(62, 77, 134, 0.2);
+  border-radius: 54px;
+  background-color: $color-main-blue;
+  color: $color-white;
+  @include adaptive-value("padding-left", 25, 15, $xxs);
+  @include adaptive-value("padding-right", 25, 15, $xxs);
+  @include adaptive-value("padding-top", 25, 20, $xxs);
+  @include adaptive-value("padding-bottom", 25, 20, $xxs);
+  transition: 0.1s;
+
+  &:active {
+    transform: scale(0.98);
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: $color-bth-hover;
+    }
+  }
+}

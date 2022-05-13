@@ -1,0 +1,74 @@
+.wave {
+  background-color: $color-main-blue;
+  position: relative;
+
+  // .wave__icon
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    transform: translateY(-50%);
+    @media (max-width: ($xs+px)) {
+      transform: translateY(-50%) scale(2);
+    }
+  }
+
+  // .wave__icon-star
+
+  &__icon-star {
+    @media (max-width: ($s+px)) {
+      display: none;
+    }
+    position: absolute;
+    bottom: -14%;
+    right: -14%;
+  }
+
+  // .wave__container
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    @include adaptive-value("gap", 90, 22, $xxs);
+    @include adaptive-value("padding-top", 210, 62, $xxs);
+    @include adaptive-value("padding-bottom", 117, 77, $xxs);
+    @media (max-width: ($m+px)) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  // .wave__title
+
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    color: $color-white;
+
+    max-width: 484px;
+    @media (min-width: ($m+px)) {
+      text-align: right;
+    }
+  }
+
+  // .wave__description
+
+  &__description {
+    position: relative;
+    max-width: 669px;
+  }
+
+  // .wave__text
+
+  &__text {
+    color: $color-white;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 160%;
+    @include adaptive-value("margin-bottom", 33, 25, $xxs);
+  }
+}

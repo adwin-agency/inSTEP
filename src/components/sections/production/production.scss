@@ -1,0 +1,90 @@
+.production {
+  // .production__container
+  @include adaptive-value("margin-top", 200, 100, $xxs);
+  @include adaptive-value("margin-bottom", 77, 55, $xxs);
+  &__container {
+  }
+
+  // .production__title
+
+  &__title {
+    max-width: 730px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+  }
+
+  // .production__title-accent
+
+  &__title-accent {
+  }
+
+  // .production__text
+
+  &__text {
+    max-width: 1028px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    margin-top: 25px;
+  }
+
+  // .production__advantages
+
+  &__advantages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    @include adaptive-value("gap", 60, 78, $xxs);
+    @include adaptive-value("margin-top", 100, 70, $xxs);
+  }
+
+  // .production__box
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 230px;
+  }
+
+  // .production__box-title
+
+  &__box-title {
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    position: relative;
+    text-align: center;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -37%);
+      @include adaptive-value("font-size", 140, 100, $xxs);
+      color: $color-gray-light;
+      z-index: -1;
+    }
+  }
+
+  // .production__box-text
+
+  &__box-text {
+    margin-top: 11px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+    text-align: center;
+  }
+}

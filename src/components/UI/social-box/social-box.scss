@@ -1,0 +1,29 @@
+.social-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-image: url("../icons/Glassy-card-social.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 17px 0px 17px 17px;
+  padding: 13px 30px;
+  margin-left: auto;
+  @include adaptive-value("padding-left", 30, 15, $xxs);
+  @include adaptive-value("padding-right", 30, 15, $xxs);
+  // .social-box__icon
+
+  &__icon {
+    color: $color-white;
+    transition: color $transitionLight;
+    &::before {
+      @include adaptive-value("font-size", 50, 30, $xxs);
+      color: inherit;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        color: $color-bth-hover;
+      }
+    }
+  }
+}

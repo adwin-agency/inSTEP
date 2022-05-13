@@ -1,0 +1,138 @@
+.tile {
+  @include adaptive-value("margin-bottom", 270, 95, $xxs);
+
+  // .tile__container
+
+  &__container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 10px;
+    z-index: $zIndex-s;
+  }
+
+  // .tile__card
+
+  &__card {
+  }
+  //tile__background-icon
+  &__background-icon {
+    position: absolute;
+    left: 14%;
+    bottom: 11%;
+    transform: scale(9);
+    z-index: -1;
+    @media (max-width: ($l+px)) {
+      left: 0%;
+      bottom: 11%;
+      transform: scale(10);
+    }
+    @media (max-width: ($s+px)) {
+      left: 23%;
+      bottom: 1%;
+      transform: scale(6);
+    }
+  }
+}
+.tile-card {
+  // .tile-card_purple
+  grid-column-start: span 2;
+  @include adaptive-value("padding-left", 64, 20, $xxs);
+  @include adaptive-value("padding-right", 50, 20, $xxs);
+  padding-top: 26px;
+  @include adaptive-value("padding-bottom", 47, 30, $xxs);
+  border-radius: 10px;
+  @media (max-width: ($s+px)) {
+    grid-column-start: span 6;
+  }
+  &_large {
+    grid-column-start: span 3;
+    @media (max-width: ($s+px)) {
+      grid-column-start: span 6;
+    }
+  }
+  &_purple {
+    background-color: $color-purple-light;
+    & .tile-card__icon {
+      &::before {
+        color: #aa8ad1;
+      }
+    }
+  }
+
+  // .tile-card_aqua
+
+  &_aqua {
+    background-color: $color-aqua;
+    & .tile-card__icon {
+      &::before {
+        color: #569e9f;
+      }
+    }
+  }
+
+  // .tile-card_lilac
+
+  &_lilac {
+    background-color: $color-lilac;
+    & .tile-card__icon {
+      &::before {
+        color: #e7a284;
+      }
+    }
+  }
+
+  // .tile-card_ivory
+
+  &_ivory {
+    background-color: $color-ivory;
+    & .tile-card__icon {
+      &::before {
+        color: #cdb3e2;
+      }
+    }
+  }
+
+  // .tile-card_pastel
+
+  &_pastel {
+    background-color: $color-yellow;
+    & .tile-card__icon {
+      &::before {
+        color: #e1c26e;
+      }
+    }
+  }
+
+  // .tile-card__icon
+
+  &__icon {
+    display: block;
+    text-align: end;
+    @include adaptive-value("font-size", 80, 55, $xxs);
+  }
+
+  // .tile-card__title
+
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+    color: $color-main-blue;
+    @include adaptive-value("margin-top", 92, 61, $xxs);
+  }
+
+  // .tile-card__text
+
+  &__text {
+    font-style: normal;
+    font-weight: 300;
+    line-height: 160%;
+    color: $color-main-blue;
+    max-width: 332px;
+    margin-top: 14px;
+    &_long {
+      max-width: 547px;
+    }
+  }
+}

@@ -1,0 +1,205 @@
+.videos {
+  @include adaptive-value("margin-top", 362, 100, $xxs);
+  margin-bottom: 90px;
+  // .videos__grid
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(18, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  // .videos__title
+
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    grid-column-start: span 3;
+    @media (max-width: ($m+px)) {
+      grid-column-start: span 4;
+    }
+    @media (max-width: ($s+px)) {
+      grid-column-start: span 18;
+    }
+  }
+
+  // .videos__card
+
+  &__card {
+    display: block;
+    border-radius: 20px;
+    overflow: hidden;
+    grid-column-start: span 5;
+    @media (max-width: ($m+px)) {
+      grid-column-start: span 9;
+    }
+    @media (max-width: ($xs+px)) {
+      grid-column-start: span 18;
+    }
+    // .videos__card_text-right
+
+    &_text-right {
+      align-items: end;
+      text-align: right;
+    }
+    // .videos__card_l
+
+    &_l {
+      grid-column-start: span 9;
+      @media (max-width: ($m+px)) {
+        grid-column-start: span 14;
+      }
+      @media (max-width: ($s+px)) {
+        grid-column-start: span 18;
+      }
+      & .videos-card__play {
+        @include adaptive-value("top", 144, 25, $xs);
+        @include adaptive-value("right", 147, 25, $xs);
+      }
+    }
+    // .videos__card_m
+
+    &_m {
+      grid-column-start: span 8;
+      @media (max-width: ($m+px)) {
+        grid-column-start: span 9;
+      }
+      @media (max-width: ($xs+px)) {
+        grid-column-start: span 18;
+      }
+    }
+
+    // .videos__card_s
+
+    &_s {
+      grid-column-start: span 6;
+      @media (max-width: ($m+px)) {
+        grid-column-start: span 9;
+      }
+      @media (max-width: ($xs+px)) {
+        grid-column-start: span 18;
+      }
+    }
+  }
+  // .videos__slider
+
+  &__slider {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    @include adaptive-value("height", 300, 150, $xs, $l);
+    @include adaptive-value("padding-left", 90, 0, $m);
+    @include adaptive-value("padding-right", 90, 0, $m);
+    @include adaptive-value("margin-left", 45, 0, $m);
+    @include adaptive-value("margin-right", 45, 0, $m);
+    @include adaptive-value("margin-top", 60, 30, $xxs, $l);
+    @media (min-width: ($m+px)) {
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        z-index: 2;
+      }
+
+      &::before {
+        left: 100%;
+        @include adaptive-value("margin-left", -90, 0, $m);
+      }
+      &::after {
+        right: 100%;
+        @include adaptive-value("margin-right", -90, 0, $m);
+      }
+    }
+  }
+  // .videos__slider-item
+
+  &__slider-item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  // .videos__slider-image
+
+  &__slider-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__slider-play {
+    color: $color-white;
+  }
+  &__slider-controls {
+  }
+
+  &__slider-btn-l,
+  &__slider-btn-r {
+    color: $color-black;
+
+    @media (min-width: ($s+px)) {
+      font-size: 20px;
+    }
+    &::before {
+      color: inherit;
+    }
+  }
+
+  &__slider-btn-l {
+    &::before {
+      text-align: end;
+      padding-right: 8px;
+    }
+  }
+
+  &__slider-btn-r {
+    &::before {
+      text-align: start;
+      padding-left: 8px;
+    }
+  }
+}
+.videos-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  color: $color-white;
+  @include adaptive-value("padding-top", 80, 12, $xxs);
+  @include adaptive-value("padding-bottom", 42, 25, $xxs);
+  @include adaptive-value("padding-left", 80, 10, $xxs);
+  @include adaptive-value("padding-right", 80, 10, $xxs);
+  // .videos-card__poster
+  @include adaptive-value("height", 330, 220, $xxs, $l);
+  &__poster {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  // .videos-card__title
+
+  &__title {
+    position: relative;
+    z-index: $zIndex-s;
+    max-width: 440px;
+  }
+
+  // .videos-card__play
+
+  &__play {
+    position: absolute;
+    top: 26px;
+    @include adaptive-value("right", 37, 25, $xxs);
+  }
+}

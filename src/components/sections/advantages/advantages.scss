@@ -1,0 +1,225 @@
+.advantages {
+  // .advantages__container
+  @include adaptive-value("margin-top", 200, 95, $xxs);
+  @include adaptive-value("margin-bottom", 100, 20, $xxs);
+  &__container {
+  }
+
+  // .advantages__title
+
+  &__title {
+    max-width: 813px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  // .advantages__title-accent
+
+  &__title-accent {
+  }
+
+  // .advantages__subtitle
+
+  &__subtitle {
+    max-width: 595px;
+    margin: 0 auto;
+    text-align: center;
+    @include adaptive-value("margin-top", 41, 16, $xxs);
+  }
+
+  // .advantages__body
+
+  &__body {
+    display: grid;
+    @include adaptive-value("row-gap", 200, 55, $xxs);
+    @include adaptive-value("margin-top", 166, 31, $xxs);
+    @media (min-width: ($s+px)) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: auto;
+      @include adaptive-value("column-gap", 100, 25, $s);
+    }
+  }
+
+  // .advantages__card
+
+  &__card {
+  }
+}
+.advantages-card {
+  // .advantages-card_full
+
+  display: flex;
+  @include adaptive-value("gap", 80, 50, $xxs);
+  @media (max-width: ($s+px)) {
+    flex-direction: column;
+  }
+  &_full {
+    @media (min-width: ($s+px)) {
+      grid-column-start: span 3;
+    }
+  }
+  &_space-between {
+    justify-content: space-between;
+  }
+  &_margin-minus {
+    @include adaptive-value("margin-top", -200, 0, $s);
+  }
+  &_mobile-reverse {
+    @media (max-width: ($s+px)) {
+      flex-direction: column-reverse;
+    }
+  }
+  &__backgorund {
+    position: absolute;
+    z-index: -1;
+    &_bg-1 {
+      bottom: -34%;
+      left: 16%;
+      transform: scale(3.5);
+      @media (min-width: ($xs+px)) {
+        bottom: -10%;
+        left: 16%;
+        transform: scale(5.5);
+      }
+      @media (min-width: ($s+px)) {
+        bottom: -4%;
+        left: 16%;
+        transform: scale(4.5);
+      }
+    }
+    &_bg-2 {
+      top: -22%;
+      right: 0%;
+      transform: scale(5);
+      @media (max-width: ($s+px)) {
+        display: none;
+      }
+    }
+    &_bg-3 {
+      bottom: -32%;
+      left: 0%;
+      transform: scale(3.5);
+
+      @media (min-width: ($xs+px)) {
+        bottom: -17%;
+        left: 0%;
+        transform: scale(4.2);
+      }
+      @media (min-width: ($s+px)) {
+        bottom: 16%;
+        left: 30%;
+        transform: scale(4);
+      }
+    }
+  }
+  // .advantages-card__image-box
+
+  &__image-box {
+    position: relative;
+  }
+
+  // .advantages-card__image-double
+
+  &__image-double {
+    position: relative;
+    @media (min-width: ($s+px)) {
+      display: grid;
+      grid-auto-columns: 1fr 2.4fr minmax(150px, 1fr);
+      grid-auto-rows: auto;
+    }
+  }
+
+  // .advantages-card__image
+
+  &__image {
+    max-width: 714px;
+    max-height: 716px;
+    &_main {
+      @media (min-width: ($s+px)) {
+        grid-area: 1/2/3/4;
+      }
+    }
+    &_mini {
+      display: none;
+      @media (min-width: ($s+px)) {
+        display: block;
+        grid-area: 2/1/4/3;
+        width: 100%;
+        height: 100%;
+        max-width: 432px;
+        max-height: 596px;
+        filter: drop-shadow(0px 0px 34px rgba(0, 0, 0, 0.25));
+        @include adaptive-value("border-top-left-radius", 150, 50, $s);
+        @include adaptive-value("border-bottom-right-radius", 150, 50, $s);
+      }
+    }
+  }
+
+  // .advantages-card__body
+
+  &__body {
+    &_max {
+      max-width: 798px;
+      @media (max-width: ($l+px)) {
+        max-width: 50%;
+      }
+      @media (max-width: ($s+px)) {
+        max-width: 100%;
+      }
+    }
+    &_medium {
+      max-width: 595px;
+      @media (max-width: ($l+px)) {
+        max-width: 50%;
+      }
+      @media (max-width: ($s+px)) {
+        max-width: 100%;
+      }
+    }
+    &_min {
+      max-width: 500px;
+      @media (max-width: ($s+px)) {
+        max-width: 100%;
+      }
+    }
+    &_align-center {
+      @media (min-width: ($s+px)) {
+        align-self: center;
+      }
+    }
+  }
+
+  // .advantages-card__number
+
+  &__number {
+    font-style: normal;
+    font-weight: 400;
+    @include adaptive-value("font-size", 150, 110, $xxs, $m);
+    line-height: 90%;
+
+    background: linear-gradient(
+      180deg,
+      rgba(62, 77, 134, 0.3) 0%,
+      rgba(62, 77, 134, 0) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+
+  // .advantages-card__title
+
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    @include adaptive-value("margin-top", -54, -36, $xxs);
+  }
+
+  // .advantages-card__text
+
+  &__text {
+    @include adaptive-value("margin-top", 37, 25, $xxs, $m);
+  }
+}

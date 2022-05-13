@@ -1,0 +1,214 @@
+.about {
+  margin-top: 90px;
+  @include adaptive-value("margin-bottom", 176, 95, $xxs);
+  // .about__container
+
+  &__container {
+    position: relative;
+    display: grid;
+    @include adaptive-value("gap", 75, 20, $xs);
+    align-items: center;
+    grid-template-columns: minmax(0, 1fr);
+    @media (min-width: ($s+px)) {
+      grid-template-columns: minmax(0, 0.6fr) minmax(0, 1fr);
+    }
+  }
+
+  // .about__descritpion
+
+  &__descritpion {
+  }
+
+  // .about__title
+
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    line-height: 90%;
+  }
+
+  // .about__subtitle
+
+  &__subtitle {
+    font-style: normal;
+    font-weight: 600;
+    line-height: 160%;
+    margin-top: 30px;
+    color: $color-main-blue;
+    @include adaptive-value("margin-bottom", 67, 21, $xxs);
+  }
+
+  // .about__text
+
+  &__text {
+    font-style: normal;
+    font-weight: 300;
+    line-height: 160%;
+    color: $color-main-blue;
+  }
+
+  // .about__interactive
+
+  &__interactive {
+    position: relative;
+  }
+  // .about__socials {
+  &__socials {
+    display: flex;
+    gap: 9px;
+  }
+  // .about__social-box
+
+  &__social-box {
+    margin-left: auto;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    flex-wrap: wrap;
+    filter: drop-shadow(0px 2px 24px rgba(0, 0, 0, 0.05));
+    border-radius: 20px;
+    backdrop-filter: blur(9px);
+    @include adaptive-value("gap", 43, 7, $xs);
+    @include adaptive-value("margin-right", 118, 0, $xs);
+    @include adaptive-value("padding-top", 30, 19, $xxs);
+    @include adaptive-value("padding-bottom", 30, 15, $xxs);
+    @include adaptive-value("padding-right", 40, 34, $xxs);
+    @include adaptive-value("padding-left", 40, 34, $xxs);
+    @media (max-width: ($m+px)) {
+      flex-direction: column-reverse;
+      align-items: flex-end;
+    }
+  }
+
+  // .about__social-icon
+
+  &__social-icon {
+    color: $color-main-blue;
+    z-index: $zIndex-m;
+    @include adaptive-value("font-size", 60, 50, $xxs);
+    transition: $transitionLight;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $color-bth-hover;
+      }
+    }
+  }
+
+  // .about__social-text
+
+  &__social-text {
+    z-index: $zIndex-m;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    max-width: 174px;
+    @media (max-width: ($m+px)) {
+      text-align: right;
+    }
+  }
+  // .about__image-box
+  &__image-box {
+    position: absolute;
+    @include adaptive-value("top", -88, 33, $xxs);
+    left: 0;
+    z-index: -1;
+  }
+
+  // .about__image
+
+  &__image {
+    @include adaptive-value("width", 969, 452, $xxs);
+    @include adaptive-value("height", 969, 452, $xxs);
+  }
+
+  &__image-icon {
+    position: absolute;
+
+    &._icon-Love-Marker {
+      right: 0;
+      top: 50%;
+      transform: translate(25%, -50%);
+      @include adaptive-value("font-size", 111, 90, $xxs);
+      color: $color-purple;
+      @media (max-width: ($xs+px)) {
+        transform: translate(20%, -145%);
+      }
+    }
+    &._icon-Hashtag-Marker {
+      right: 0;
+      top: 50%;
+      transform: translate(-65%, 100%);
+      font-size: 87px;
+      color: $color-white;
+      @media (min-width: ($m+px)) {
+        z-index: -1;
+      }
+      @media (max-width: ($xs+px)) {
+        transform: translate(0%, 100%);
+      }
+    }
+  }
+  // .about__slider-box
+
+  &__slider-box {
+    position: relative;
+    margin-left: auto;
+    max-width: 760px;
+    background-color: $color-white;
+    border-radius: 30px;
+    padding: 18px;
+    justify-self: end;
+    @include adaptive-value("margin-top", 465, 273, $xxs);
+    @include adaptive-value("padding-right", 108, 30, $xxs);
+  }
+
+  // .about__slider
+
+  &__slider {
+    min-width: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    @include adaptive-value("height", 172, 155, $xxs, $s);
+  }
+
+  // .about__slide
+
+  &__slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-white;
+  }
+
+  // .about__slide-img
+
+  &__slide-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &__slider-button {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: $zIndex-m;
+  }
+  // .about__play
+
+  &__play {
+  }
+
+  &__background-icon {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: scale(8);
+    z-index: -2;
+    @media (max-width: ($xs+px)) {
+      top: 33%;
+      right: 26%;
+      transform: scale(9);
+    }
+  }
+}

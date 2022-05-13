@@ -1,0 +1,29 @@
+<section class="quote">
+  <div class="quote__container _continaer">
+    <div class="quote__box">
+
+      <h2 class="quote__title _h1">
+        @@include('../../UI/icon/icon.html', {
+        class: 'quote__icon quote__icon_start',
+        name: 'quote-start',
+        width: '',
+        height: '',
+        })
+
+        @@text
+
+        @@if(accent) {
+        <span class="quote__title_accent"> @@accent</span>
+        }
+
+        @@include('../../UI/icon/icon.html', {
+        class: 'quote__icon quote__icon_end',
+        name: 'quote-end',
+        width: '',
+        height: '',
+        })
+      </h2>
+
+    </div>
+  </div>
+</section>

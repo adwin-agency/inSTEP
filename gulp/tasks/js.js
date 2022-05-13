@@ -25,6 +25,10 @@ export const js = () =>
               exclude: /node_modules/,
               use: "babel-loader",
             },
+            {
+              test: /\.css$/,
+              use: ["style-loader", "css-loader"],
+            },
           ],
         },
         mode: app.isBuild ? "production" : "development",

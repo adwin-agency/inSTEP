@@ -1,2 +1,100 @@
 .footer {
+  background-color: $color-main-blue;
+  @include adaptive-value("padding-top", 47, 26, $xxs);
+  @include adaptive-value("padding-bottom", 47, 11, $xxs);
+  // .footer__container
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include adaptive-value("gap", 77, 40, $xxs);
+    @media (max-width: ($m+px)) {
+      flex-wrap: wrap;
+    }
+    @media (max-width: ($xs+px)) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  // .footer__logo
+
+  &__logo {
+  }
+
+  // .footer__logo-image
+
+  &__logo-image {
+    @include adaptive-value("max-width", 195, 140, $xxs);
+  }
+
+  // .footer__info
+
+  &__info {
+    margin-right: auto;
+    @media (max-width: ($m+px)) {
+      order: 1;
+    }
+  }
+
+  // .footer__pay-icons
+
+  &__pay-icons {
+    display: flex;
+    gap: 14px;
+  }
+
+  // .footer__policy
+
+  &__policy {
+    color: $color-gray;
+    margin-top: 14px;
+    @media (any-hover: hover) {
+      transition: color $transitionNormal;
+      &:hover {
+        color: $color-white;
+      }
+    }
+  }
+
+  // .footer__nav
+
+  &__nav {
+    @media (min-width: ($s+px)) and (max-width: ($m+px)) {
+      width: 70%;
+    }
+  }
+
+  // .footer__list
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    color: $color-white;
+    @include adaptive-value("gap", 36, 25, $xxs);
+    @media (max-width: ($xs+px)) {
+      flex-direction: column;
+    }
+  }
+
+  // .footer__item
+
+  &__item {
+  }
+
+  // .footer__link
+
+  &__link {
+    font-style: normal;
+    font-weight: 600;
+    line-height: 110%;
+    text-transform: uppercase;
+    @media (any-hover: hover) {
+      transition: opacity $transitionNormal;
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
 }

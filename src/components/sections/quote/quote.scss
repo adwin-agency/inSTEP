@@ -1,0 +1,59 @@
+.quote {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  // .quote__container
+
+  &__container {
+  }
+
+  // .quote__box
+
+  &__box {
+    position: relative;
+    max-width: 929px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  // .quote__title
+
+  &__title {
+    position: relative;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 90%;
+    text-align: center;
+    color: $color-main-blue;
+    &_accent {
+      font-weight: 600;
+    }
+  }
+
+  //quote__icon
+  &__icon {
+    position: absolute;
+    z-index: -1;
+    // quote__icon-start
+    @include adaptive-value("width", 99, 70, $xxs);
+    @include adaptive-value("height", 65, 45, $xxs);
+    &_start {
+      top: -13%;
+      left: 6%;
+      @media (max-width: ($m+px)) {
+        left: 0;
+      }
+    }
+
+    // quote__icon-end
+
+    &_end {
+      bottom: -11%;
+      right: -2%;
+      @media (max-width: ($m+px)) {
+        right: 0;
+      }
+    }
+  }
+}

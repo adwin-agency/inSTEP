@@ -6,15 +6,29 @@
   width: 100%;
   // @include adaptive-value("min-height", 126, 56, $s);
   height: auto;
+  z-index: $zIndex-l;
 
   &__wrapper {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    @include adaptive-value("padding-top", 15, 5, $xxs);
+    @include adaptive-value("padding-bottom", 15, 10, $xxs);
+
     @media (max-width: ($m+px)) {
-      box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.15);
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0px 4px 14px rgb(0 0 0 / 15%);
+        background-color: $color-white;
+        z-index: $zIndex-l - 1;
+        pointer-events: none;
+      }
     }
   }
 
@@ -27,13 +41,22 @@
       display: none;
     }
   }
+  // .header__logo
+  &__logo {
+    z-index: $zIndex-l;
+    @media (max-width: ($m+px)) {
+      margin-right: auto;
+      margin-left: 20px;
+    }
+  }
   // .header__logo-icon
 
   &__logo-icon {
-    @include adaptive-value(" max-width", 214, 160, $l);
-    width: 100%;
-    flex-shrink: 0;
-    z-index: $zIndex-l;
+    & img {
+      @include adaptive-value(" max-width", 214, 160, $l);
+      width: 100%;
+      flex-shrink: 0;
+    }
   }
 
   // .header__nav
@@ -57,11 +80,16 @@
       margin-left: 0;
       padding-left: 20px;
       padding-right: 20px;
-      padding-top: 154px;
+      padding-top: 134px;
       transition: $transitionNormal;
+      background-color: $color-white;
+      align-items: flex-start;
+      overflow-y: auto;
+      overflow-x: hidden;
     }
     @media (max-width: ($s+px)) {
       padding-top: 104px;
+      align-items: center;
     }
     @media (max-width: ($xxs+px)) {
       padding-left: 10px;
@@ -105,13 +133,19 @@
     @media (max-width: ($m+px)) {
       font-size: 16px;
     }
+    @media (any-hover: hover) {
+      transition: color $transitionLight;
+      &:hover {
+        color: $color-link-hover;
+      }
+    }
   }
   // header__phone-icon
   &__phone-icon {
     height: 100%;
     width: 34px;
     @media (min-width: ($s+px)) {
-      width: 60px;
+      width: 40px;
     }
     @media (min-width: ($m+px)) {
       display: none;
@@ -123,9 +157,11 @@
   &__phone {
     display: flex;
     flex-direction: column;
-    gap: 5px;
     @media (min-width: ($m+px)) and (max-width: ($l+px)) {
       display: none;
+    }
+    @media (max-width: ($m+px)) {
+      margin-top: 100px;
     }
   }
 
@@ -157,24 +193,8 @@
   // .header__button
 
   &__button {
-    max-width: 280px;
+    @media (min-width: ($s+px)) {
+      max-width: 280px;
+    }
   }
-}
-.button {
-  font-family: $fontFamily;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 13px;
-  line-height: 130%;
-  text-align: center;
-  text-transform: uppercase;
-  width: 100%;
-  box-shadow: 0px 30px 14px -20px rgba(62, 77, 134, 0.2);
-  border-radius: 54px;
-  background-color: $color-main-blue;
-  color: $color-white;
-  @include adaptive-value("padding-left", 25, 15, $xxs);
-  @include adaptive-value("padding-right", 25, 15, $xxs);
-  padding-top: 25px;
-  padding-bottom: 25px;
 }
