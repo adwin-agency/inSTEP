@@ -7,27 +7,31 @@ export default class PopupMultimedia extends Popups {
     this.init();
   }
   init() {
-    this.openListeners(this.searchUrl);
+    this.openListeners(this.searchPopupUrl);
   }
 
-  searchUrl(event) {
+  searchPopupUrl(event) {
     const { target } = event;
-    const fullHd = target.dataset.urlVideoHd;
-
-    console.log(fullHd, target.dataset);
+    const fullHdSrc = target.dataset.urlVideoHd;
+    this.setVideoUrl(fullHdSrc);
   }
-
-  playVideo = () => {
-    if (!slide.classList.contains(playClass)) {
-      slide.classList.add(playClass);
-      slide.classList.remove(plauseClass);
+  setVideoUrl() {
+    const popup = this.findOpenPopup(target);
+    const video = popup.querySelector("video");
+    video.setAttribute("src", fullHdSrc);
+  }
+  checkingUniqUrl() {}
+  playVideo(video) {
+    if (!video.classList.contains(playClass)) {
+      video.classList.add(playClass);
+      video.classList.remove(plauseClass);
       video.play();
     } else {
       video.pause();
-      slide.classList.add(plauseClass);
-      slide.classList.remove(playClass);
+      video.classList.add(plauseClass);
+      video.classList.remove(playClass);
     }
-  };
+  }
   setAttribute = () => {
     if (video.getAttribute("data-src")) {
       const src = video.getAttribute("data-src");
