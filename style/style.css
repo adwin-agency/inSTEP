@@ -3990,8 +3990,11 @@ html {
 }
 
 @media (max-width: 1024.5px) {
-  .popup-card__container {
-    padding-bottom: 122px;
+  .popup-card {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    background-color: #ffffff;
   }
 
   .intro__container {
@@ -4233,13 +4236,6 @@ html {
 }
 
 @media (max-width: 780.5px) {
-  ._popup-wrapper {
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    background-color: #ffffff;
-  }
-
   .popup-card__container {
     padding-bottom: 25px;
   }
@@ -4257,18 +4253,19 @@ html {
     margin-top: 25px;
   }
 
-  .popup-card__button {
-    position: fixed;
-    bottom: 33px;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%);
-    z-index: 501;
-  }
-
   .popup-card__main-slider {
     padding-left: 10px;
+  }
+
+  .popup-card__duplicate-slide {
+    display: none;
+  }
+
+  .popup-consult {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    background-color: #ffffff;
   }
 
   .intro__description {
