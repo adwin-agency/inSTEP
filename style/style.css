@@ -3997,6 +3997,11 @@ html {
     background-color: #ffffff;
   }
 
+  .popup-card__info {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
   .intro__container {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
@@ -4242,11 +4247,6 @@ html {
 
   .popup-card__container {
     padding-left: 0px;
-  }
-
-  .popup-card__info {
-    padding-right: 10px;
-    padding-left: 10px;
   }
 
   .popup-card__button {
