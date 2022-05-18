@@ -1,6 +1,10 @@
 .popup-consult {
   // .popup-consult__container
   z-index: $zIndex-l;
+  @media (max-width: ($s+px)) {
+    align-items: flex-start;
+    background-color: $color-white;
+  }
   &__container {
     padding-top: 56px;
     padding-bottom: 37px;

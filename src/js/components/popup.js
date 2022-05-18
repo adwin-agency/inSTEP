@@ -9,7 +9,8 @@ export default class Popups {
     this.openButtons = [...document.querySelectorAll(`[${openAttribute}]`)];
     this.closeButtons = [...document.querySelectorAll(`[${closeAttribute}]`)];
     this.popups = [...document.querySelectorAll(`[${popupsAttribute}]`)];
-    this.setListener();
+    this.openListeners(this.openEvent);
+    this.closeListeners(this.closeEvent);
   }
 
   clickedAttributes(button) {
@@ -52,27 +53,26 @@ export default class Popups {
   }
 
   close(element) {
+    document.body.style.paddingRight = "0px";
     element.classList.remove("_open");
     document.body.classList.remove("_fixed");
-    document.body.style.paddingRight = "";
-    document.querySelector("header").style.paddingRight = ``;
   }
 
   open(element) {
+    document.body.style.paddingRight = `${determineScrollWidth()}px`;
     element.classList.add("_open");
     document.body.classList.add("_fixed");
-    document.body.style.paddingRight = `${determineScrollWidth()}px`;
-    document.querySelector(
-      "header"
-    ).style.paddingRight = `${determineScrollWidth()}px`;
   }
 
-  setListener() {
-    this.closeButtons.forEach((button) => {
-      button.addEventListener("click", this.closeEvent.bind(this));
-    });
+  openListeners(func) {
     this.openButtons.forEach((button) => {
-      button.addEventListener("click", this.openEvent.bind(this));
+      button.addEventListener("click", func.bind(this));
+    });
+  }
+
+  closeListeners(func) {
+    this.closeButtons.forEach((button) => {
+      button.addEventListener("click", func.bind(this));
     });
   }
 }

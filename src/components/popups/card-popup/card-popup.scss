@@ -1,6 +1,10 @@
 .popup-card {
   overflow-y: auto;
   z-index: $zIndex-l;
+  @media (max-width: ($m+px)) {
+    align-items: flex-start;
+    background-color: $color-white;
+  }
   // .popup-card__container
   &__container {
     position: relative;
@@ -14,7 +18,7 @@
       margin-right: 25px;
     }
     @media (max-width: ($m+px)) {
-      padding-bottom: 122px;
+      // padding-bottom: 122px;
     }
   }
 
@@ -40,7 +44,7 @@
   // .popup-card__info
 
   &__info {
-    @media (max-width: ($s+px)) {
+    @media (max-width: ($m+px)) {
       padding-right: 10px;
       padding-left: 10px;
     }
@@ -70,11 +74,11 @@
       max-width: 335px;
     }
     @media (max-width: ($s+px)) {
-      position: fixed;
-      bottom: 33px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: $zIndex-l + 1;
+      // position: fixed;
+      // bottom: 33px;
+      // left: 50%;
+      // transform: translateX(-50%);
+      // z-index: $zIndex-l + 1;
     }
   }
 
@@ -229,6 +233,9 @@
   &__duplicate-slide {
     position: relative;
     cursor: pointer;
+    @media (max-width: ($s+px)) {
+      display: none;
+    }
     &.video-is-playing-js {
       &::before {
         opacity: 0;

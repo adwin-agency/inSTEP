@@ -19,14 +19,12 @@ export default class Header {
     }
 
     this.isScrolling();
-    // eslint-disable-next-line no-unused-expressions
-    console.log(
-      document.body.offsetHeight,
-      document.documentElement.clientHeight
-    );
-    // if ()
-    this.oldScrollTopPosition > scrollTopPosition ? this.show() : this.hide();
-    this.oldScrollTopPosition = scrollTopPosition;
+
+    if (!document.body.classList.contains("_fixed")) {
+      // eslint-disable-next-line no-unused-expressions
+      this.oldScrollTopPosition > scrollTopPosition ? this.show() : this.hide();
+      this.oldScrollTopPosition = scrollTopPosition;
+    }
   }
 
   show() {
