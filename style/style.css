@@ -587,7 +587,7 @@ main {
 
 ._container {
   max-width: 1872px;
-  width: 100vw;
+  width: 100%;
   padding: 0px 1rem;
   margin: 0 auto;
 }
