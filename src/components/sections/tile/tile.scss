@@ -22,6 +22,7 @@
     bottom: 11%;
     transform: scale(9);
     z-index: -1;
+    pointer-events: none;
     @media (max-width: ($l+px)) {
       left: 0%;
       bottom: 11%;
@@ -39,18 +40,29 @@
   grid-column-start: span 2;
   @include adaptive-value("padding-left", 64, 20, $xxs);
   @include adaptive-value("padding-right", 50, 20, $xxs);
-  padding-top: 26px;
   @include adaptive-value("padding-bottom", 47, 30, $xxs);
+  padding-top: 26px;
   border-radius: 10px;
+  cursor: pointer;
+  transition: $transitionNormal;
+  @media (any-hover: hover) {
+    &:hover {
+      transform: scale(1.01);
+      box-shadow: -2px 2px 5px rgb(0 0 0 / 20%);
+    }
+  }
+
   @media (max-width: ($s+px)) {
     grid-column-start: span 6;
   }
+
   &_large {
     grid-column-start: span 3;
     @media (max-width: ($s+px)) {
       grid-column-start: span 6;
     }
   }
+
   &_purple {
     background-color: $color-purple-light;
     & .tile-card__icon {
@@ -109,6 +121,7 @@
   &__icon {
     display: block;
     text-align: end;
+    pointer-events: none;
     @include adaptive-value("font-size", 80, 55, $xxs);
   }
 
@@ -119,6 +132,7 @@
     font-weight: 700;
     line-height: 110%;
     color: $color-main-blue;
+    pointer-events: none;
     @include adaptive-value("margin-top", 92, 61, $xxs);
   }
 
@@ -131,6 +145,7 @@
     color: $color-main-blue;
     max-width: 332px;
     margin-top: 14px;
+    pointer-events: none;
     &_long {
       max-width: 547px;
     }

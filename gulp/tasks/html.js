@@ -14,7 +14,7 @@ export const html = () =>
       )
     )
     .pipe(fileinclude())
-    .pipe(app.plugins.if(app.isBuild, webpHtmlNosvg()))
+    // .pipe(app.plugins.if(app.isBuild, webpHtmlNosvg()))
     .pipe(
       app.plugins.if(
         app.isBuild,

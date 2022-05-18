@@ -1,0 +1,52 @@
+.popup-video {
+  z-index: $zIndex-l;
+  // .popup-video__container
+
+  &__container {
+    background-color: transparent;
+    max-width: 88%;
+    max-height: 88%;
+  }
+
+  // .popup-video__close
+
+  &__close {
+    color: $color-white;
+  }
+
+  // .popup-video__video-box
+
+  &__video-box {
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 34px;
+      transform: translate(-50%, -50%);
+      transition: transform $transitionLight;
+      color: $color-white;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        &::before {
+          transform: translate(-50%, -50%) scale(1.14);
+        }
+      }
+      &:active {
+        &::before {
+          transform: translate(-50%, -50%) scale(0.9);
+        }
+      }
+    }
+  }
+
+  // .popup-video__video
+
+  &__video {
+    display: block;
+    @include adaptive-value(" border-radius", 20, 16, $xxs);
+  }
+}

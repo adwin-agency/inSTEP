@@ -1,7 +1,7 @@
-<section class="popup-card _popup-wrapper">
+<section class="popup-card _popup-wrapper" data-popup="card" data-popup-close="card">
 
   <div class="popup-card__container _popup-content">
-    <button class="popup-card__close _icon-close"></button>
+    <button class="popup-card__close _icon-close _popup-close" data-popup-close="card"></button>
     <div class="popup-card__body">
       <div class="popup-card__info">
         <h2 class="popup-card__title _h4">Протез голени</h2>
@@ -41,7 +41,8 @@
         @@include('../../UI/button/button.html', {
         class: 'popup-card__button',
         text: 'Записаться на консультацию',
-        type: 'button'
+        type: 'button',
+        attribute: 'data-popup-open="consult" data-popup-close="card"'
         })
       </div>
 
@@ -51,20 +52,22 @@
             <div class="popup-card__main-slide swiper-slide">
               <img src="@img/popup-card/main_1.jpg" alt="slide">
             </div>
-            <div class="popup-card__main-slide swiper-slide">
-              <img src="@img/popup-card/main_2.jpg" alt="slide">
+            <div class="popup-card__main-slide swiper-slide _icon-play">
+              <!-- <img src="@img/popup-card/main_2.jpg" alt="slide"> -->
+              <video class="popup-card__main-slide-content" data-src="../files/test-video.mp4"
+                poster="@img/popup-card/main_2.jpg" autoplay muted></video>
             </div>
             <div class="popup-card__main-slide swiper-slide">
-              <img src="@img/popup-card/main_3.jpg" alt="slide">
+              <img class="popup-card__main-slide-content" src="@img/popup-card/main_3.jpg" alt="slide">
             </div>
             <div class="popup-card__main-slide swiper-slide">
-              <img src="@img/popup-card/main_1.jpg" alt="slide">
+              <img class="popup-card__main-slide-content" src="@img/popup-card/main_1.jpg" alt="slide">
             </div>
             <div class="popup-card__main-slide swiper-slide">
-              <img src="@img/popup-card/main_2.jpg" alt="slide">
+              <img class="popup-card__main-slide-content" src="@img/popup-card/main_2.jpg" alt="slide">
             </div>
             <div class="popup-card__main-slide swiper-slide">
-              <img src="@img/popup-card/main_3.jpg" alt="slide">
+              <img class="popup-card__main-slide-content" src="@img/popup-card/main_3.jpg" alt="slide">
             </div>
           </div>
           <div class="popup-card__slider-controls _slider-controls">
@@ -75,22 +78,24 @@
         <div class="popup-card__duplicate-slider _swiper-settings _swiper-settings_auto-width">
           <div class="swiper-wrapper">
             <div class="popup-card__duplicate-slide swiper-slide">
-              <img src="@img/popup-card/image_3.jpg" alt="duplicate-slide">
+              <img class="popup-card__duplicate-slide-content" src="@img/popup-card/image_3.jpg" alt="duplicate-slide">
             </div>
             <div class="popup-card__duplicate-slide swiper-slide _icon-play">
-              <img src="@img/popup-card/image_4.jpg" alt="duplicate-slide">
+              <!-- <img class="popup-card__duplicate-slide-content" src="@img/popup-card/image_4.jpg" alt="duplicate-slide"> -->
+              <video class="popup-card__duplicate-slide-content" data-src="../files/test-video.mp4"
+                poster="@img/popup-card/main_2.jpg" autoplay muted></video>
             </div>
             <div class="popup-card__duplicate-slide swiper-slide">
-              <img src="@img/popup-card/image_5.jpg" alt="duplicate-slide">
+              <img class="popup-card__duplicate-slide-content" src="@img/popup-card/image_5.jpg" alt="duplicate-slide">
             </div>
             <div class="popup-card__duplicate-slide swiper-slide">
-              <img src="@img/popup-card/image_6.jpg" alt="duplicate-slide">
+              <img class="popup-card__duplicate-slide-content" src="@img/popup-card/image_6.jpg" alt="duplicate-slide">
             </div>
             <div class="popup-card__duplicate-slide swiper-slide">
-              <img src="@img/popup-card/image_7.jpg" alt="duplicate-slide">
+              <img class="popup-card__duplicate-slide-content" src="@img/popup-card/image_7.jpg" alt="duplicate-slide">
             </div>
             <div class="popup-card__duplicate-slide swiper-slide">
-              <img src="@img/popup-card/image_8.jpg" alt="duplicate-slide">
+              <img class="popup-card__duplicate-slide-content" src="@img/popup-card/image_8.jpg" alt="duplicate-slide">
             </div>
           </div>
         </div>

@@ -90,7 +90,7 @@ const aboutSwiper = new Swiper(".about__slider", {
 });
 
 const popupMainSwiper = new Swiper(".popup-card__main-slider", {
-  slidesPerView: "auto",
+  slidesPerView: 1.5,
   spaceBetween: 10,
   speed: 800,
   // loop: true,
@@ -99,6 +99,12 @@ const popupMainSwiper = new Swiper(".popup-card__main-slider", {
   navigation: {
     nextEl: ".popup-card__slider-btn-r",
     prevEl: ".popup-card__slider-btn-l",
+  },
+  breakpoints: {
+    390: {
+      slidesPerView: "auto",
+      spaceBetween: 10,
+    },
   },
 });
 
@@ -121,3 +127,47 @@ popupMainSwiper.on("slideChange", () => {
 popupDuplicateSwiper.on("click", (e) => {
   swipeAllSliders(e.clickedIndex);
 });
+
+const SLIDER_VIDEO_PLAYER_CONST = {
+  playClass: "video-is-playing-js",
+  plauseClass: "video-on-pause-js",
+};
+
+const sliderVideoPlayer = (slider, className) => {
+  const { playClass, plauseClass } = SLIDER_VIDEO_PLAYER_CONST;
+
+  const videoSlides = [...slider.slides].filter((video) =>
+    video.classList.contains(className)
+  );
+
+  if (videoSlides) {
+    videoSlides.forEach((slide) => {
+      const video = slide.querySelector("video");
+      const playVideo = () => {
+        if (!slide.classList.contains(playClass)) {
+          slide.classList.add(playClass);
+          slide.classList.remove(plauseClass);
+          video.play();
+        } else {
+          video.pause();
+          slide.classList.add(plauseClass);
+          slide.classList.remove(playClass);
+        }
+      };
+      const setAttribute = () => {
+        if (video.getAttribute("data-src")) {
+          const src = video.getAttribute("data-src");
+          video.setAttribute("src", src);
+          video.removeAttribute("data-src");
+          slide.removeEventListener("click", setAttribute);
+        }
+      };
+      slide.addEventListener("click", setAttribute);
+      slide.addEventListener("click", playVideo);
+      video.addEventListener("ended", () => slide.classList.remove(playClass));
+    });
+  }
+};
+
+sliderVideoPlayer(popupMainSwiper, "_icon-play");
+// sliderVideoPlayer(popupDuplicateSwiper, "_icon-play");

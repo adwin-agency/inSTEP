@@ -1,3 +1,5 @@
+**_[Gh-page](https://adwin-agency.github.io/inSTEP/)_**
+
 #### Настройка для работы со сборкой
 
 в settings.json редактора прописать пути

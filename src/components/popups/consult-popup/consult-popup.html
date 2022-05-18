@@ -1,0 +1,25 @@
+<section class="popup-consult _popup-wrapper" data-popup="consult" data-popup-close="consult">
+  <div class="popup-consult__container _popup-content">
+    <button class="popup-consult__close _icon-close _popup-close" data-popup-close="consult"></button>
+    <form class="popup-consult__form">
+      <label class="_lable _icon-warning">
+        <span class="_lable-title _txt-s">Представьтесь</span>
+        <input class="_input _txt-m" type="tel" name="name" required>
+        <span class="_input-error _txt-s">Обязательное поле</span>
+      </label>
+      <label class="_lable _icon-warning">
+        <span class="_lable-title _txt-s">Контактный телефон</span>
+        <input class="_input _txt-m" type="tel" name="phone" required>
+        <span class="_input-error _txt-s">Обязательное поле</span>
+      </label>
+      @@include('../../UI/button/button.html', {
+      class: 'popup-consult__form-button',
+      text: 'Записаться',
+      type: 'submit',
+      attribute: ''
+      })
+      <p class="popup-consult__policy _txt-s">Нажимая кнопку "Отправить", вы соглашаетесь с <a href="#" target="_blank"
+          rel="noopener noreferrer">Политикой конфиденциальности</a></p>
+    </form>
+  </div>
+</section>

@@ -17,6 +17,7 @@
   width: 34px;
   height: 34px;
   transition: $transitionLight;
+  cursor: pointer;
   &:active {
     &::before {
       transition: 0.1s;
@@ -71,6 +72,7 @@
   width: 34px;
   height: 34px;
   transition: $transitionLight;
+  cursor: pointer;
   &:active {
     &::before {
       transition: 0.1s;
@@ -128,6 +130,7 @@
   border: 1px dashed;
   border-radius: 50%;
   transition: $transitionLight;
+  cursor: pointer;
   &:active {
     &::before {
       transition: 0.1s;
@@ -186,6 +189,7 @@
   border: 1px dashed;
   border-radius: 50%;
   transition: $transitionLight;
+  cursor: pointer;
   &:active {
     &::before {
       transition: 0.1s;
@@ -309,12 +313,15 @@
     padding: 0px 10px;
   }
 }
-._fixed {
-  overflow: hidden;
-}
 ._overflow-x {
   overflow-x: hidden;
   overflow-y: auto;
+}
+._overflow {
+  overflow: hidden;
+}
+._fixed {
+  overflow: hidden;
 }
 // ._section {
 //   @include adaptive-value("padding-top", 80, 30, $xxs);
@@ -430,7 +437,7 @@
   display: flex;
   flex-direction: column;
   padding-left: 7px;
-  gap: 15px;
+  gap: 7px;
 
   &::before {
     position: absolute;
@@ -503,4 +510,70 @@
   resize: none;
   transition: $transitionLight;
   background-color: transparent;
+}
+
+// ...........................POPUPS................................
+._popup-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(61, 78, 129, 0.4);
+  @media (max-width: ($s+px)) {
+    align-items: flex-start;
+    background-color: $color-white;
+  }
+
+  visibility: hidden;
+  opacity: 0;
+  transition: $transitionNormal;
+  pointer-events: none;
+  &._open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    & ._popup-content {
+      transform: scale(1);
+    }
+    & ._popup-media-content {
+      transform: scale(1);
+    }
+  }
+}
+._popup-content {
+  transition: $transitionNormal;
+  position: relative;
+  background-color: $color-white;
+  transform: scale(0);
+}
+
+._popup-media-content {
+  transition: $transitionNormal;
+  position: relative;
+  background-color: $color-white;
+  transform: scale(0);
+}
+
+._popup-close {
+  position: absolute;
+  @include adaptive-value("top", 20, 10, $xxs);
+  @include adaptive-value("right", 20, 10, $xxs);
+  width: 34px;
+  height: 34px;
+  font-size: 17px;
+  color: $color-main-blue;
+  z-index: $zIndex-s;
+  transition: $transitionLight;
+  &::before {
+    pointer-events: none;
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      transform: scale(1.14);
+    }
+  }
 }

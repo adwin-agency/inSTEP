@@ -7,7 +7,17 @@
   // @include adaptive-value("min-height", 126, 56, $s);
   height: auto;
   z-index: $zIndex-l;
-
+  transition: transform $transitionNormal, box-shadow $transitionNormal,
+    background-color $transitionNormal;
+  transform: unset;
+  &._hide {
+    transform: translateY(-100%);
+    box-shadow: unset;
+  }
+  &._scroll {
+    background-color: $color-white;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.15);
+  }
   &__wrapper {
     position: relative;
     display: flex;

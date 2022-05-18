@@ -1,0 +1,48 @@
+.popup-consult {
+  // .popup-consult__container
+  z-index: $zIndex-l;
+  &__container {
+    padding-top: 56px;
+    padding-bottom: 37px;
+    @include adaptive-value("padding-left", 80, 10, $xxs);
+    @include adaptive-value("padding-right", 80, 10, $xxs);
+  }
+
+  // .popup-consult__close
+
+  &__close {
+  }
+
+  // .popup-consult__form
+
+  &__form {
+    @media (min-width: ($s+px)) {
+      max-width: 350px;
+    }
+  }
+  // .popup-consult__form-button
+
+  &__form-button {
+    @include adaptive-value("margin-top", 31, 16, $xxs);
+  }
+
+  // .popup-consult__policy
+
+  &__policy {
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+    text-align: center;
+    margin-top: 13px;
+    color: $color-txt-extra;
+    & a {
+      transition: $transitionLight;
+      @media (any-hover: hover) {
+        &:hover {
+          color: $color-bth-hover;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

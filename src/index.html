@@ -1,32 +1,36 @@
 <!DOCTYPE html>
-<html lang="ru" class="_overflow-x">
+<html lang="ru">
 @@include('./layouts/head.html')
 @@include('./layouts/styles.html')
 
-<body class="_overflow-x">
+<body>
   @@include('./components/sections/header/header.html')
   <main>
-    @@include('./components/sections/intro/intro.html')
-    @@include('./components/sections/sponsors/sponsors.html')
-    @@include('./components/sections/advantages/advantages.html')
-    @@include('./components/sections/wave/wave.html')
-    @@include('./components/sections/newsticker/newsticker.html')
-    @@include('./components/sections/consultation/consultation.html')
-    @@include('./components/sections/tile/tile.html')
-    @@include('./components/sections/quote/quote.html', {
-    text: 'Хороший результат протезирования это работа двух людей:',
-    accent: 'специалиста и пациента'})
-    @@include('./components/sections/team/team.html')
-    @@include('./components/sections/production/production.html')
-    @@include('./components/sections/glass-tile/glass-tile.html')
-    @@include('./components/sections/quote/quote.html', {
-    text: 'Мы мастерская которая работает всей командой над решением задач одного человека — вас',
-    accent: ''})
-    @@include('./components/sections/videos/videos.html')
-    @@include('./components/sections/about/about.html')
-    @@include('./components/sections/faq/faq.html')
-    @@include('./components/sections/contact/contact.html')
-    @@include('./components/popups/card-popup/card-popup.html')
+    <div class="_overflow">
+      @@include('./components/sections/intro/intro.html')
+      @@include('./components/sections/sponsors/sponsors.html')
+      @@include('./components/sections/advantages/advantages.html')
+      @@include('./components/sections/wave/wave.html')
+      @@include('./components/sections/newsticker/newsticker.html')
+      @@include('./components/sections/consultation/consultation.html')
+      @@include('./components/sections/tile/tile.html')
+      @@include('./components/sections/quote/quote.html', {
+      text: 'Хороший результат протезирования это работа двух людей:',
+      accent: 'специалиста и пациента'})
+      @@include('./components/sections/team/team.html')
+      @@include('./components/sections/production/production.html')
+      @@include('./components/sections/glass-tile/glass-tile.html')
+      @@include('./components/sections/quote/quote.html', {
+      text: 'Мы мастерская которая работает всей командой над решением задач одного человека — вас',
+      accent: ''})
+      @@include('./components/sections/videos/videos.html')
+      @@include('./components/sections/about/about.html')
+      @@include('./components/sections/faq/faq.html')
+      @@include('./components/sections/contact/contact.html')
+      @@include('./components/popups/card-popup/card-popup.html')
+      @@include('./components/popups/consult-popup/consult-popup.html')
+      @@include('./components/popups/video-popup/video-popup.html')
+    </div>
   </main>
   @@include('./components/sections/footer/footer.html')
 </body>

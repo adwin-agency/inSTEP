@@ -84,6 +84,15 @@
     line-height: 120%;
     color: $color-txt-extra;
     max-width: 405px;
+    & a {
+      transition: $transitionLight;
+      @media (any-hover: hover) {
+        &:hover {
+          color: $color-bth-hover;
+          text-decoration: underline;
+        }
+      }
+    }
   }
 
   // .contact__glass-container
