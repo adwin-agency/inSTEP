@@ -39,7 +39,7 @@
     // .videos__card_text-right
 
     &_text-right {
-      align-items: end;
+      align-items: flex-end;
       text-align: right;
     }
     // .videos__card_l
@@ -170,7 +170,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
   color: $color-white;
   @include adaptive-value("padding-top", 80, 12, $xxs);
   @include adaptive-value("padding-bottom", 42, 25, $xxs);
@@ -192,6 +192,7 @@
     position: relative;
     z-index: $zIndex-s;
     max-width: 440px;
+    margin-top: auto;
   }
 
   // .videos-card__play

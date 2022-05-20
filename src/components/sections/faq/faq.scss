@@ -46,10 +46,14 @@
 
   &__interactive-icon {
     position: absolute;
-    left: 7%;
-    top: 81px;
-    transform: scale(9);
+    left: 0%;
+    top: 50%;
+    height: auto;
+    transform: translate(-47%, -56%) scale(0.8);
     z-index: -1;
+    @media (max-width: ($s+px)) {
+      transform: translate(-47%, -71%) scale(1.9);
+    }
   }
 }
 

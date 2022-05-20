@@ -18,21 +18,21 @@
   //tile__background-icon
   &__background-icon {
     position: absolute;
-    left: 14%;
-    bottom: 11%;
-    transform: scale(9);
+    left: 0%;
+    bottom: 0%;
+    transform: translate(-40%, 42%);
+    height: auto;
+    // transform: scale(9);
     z-index: -1;
     pointer-events: none;
-    @media (max-width: ($l+px)) {
-      left: 0%;
-      bottom: 11%;
-      transform: scale(10);
-    }
     @media (max-width: ($s+px)) {
-      left: 23%;
-      bottom: 1%;
-      transform: scale(6);
+      transform: translate(-30%, 31%) scale(1.7);
     }
+    // @media (max-width: ($s+px)) {
+    //   left: 23%;
+    //   bottom: 1%;
+    //   // transform: scale(6);
+    // }
   }
 }
 .tile-card {

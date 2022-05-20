@@ -1,0 +1,13 @@
+<section class="popup-done _popup-wrapper" data-popup="done" data-popup-close="done">
+  <div class="popup-done__container _popup-content">
+    <h2 class="popup-done__title _h4">Спасибо за заявку!</h2>
+    <p class="popup-done__text _txt-m">Скоро мы получим ваше обращение и обязательно свяжемся с вами для консультации
+    </p>
+    @@include('../../UI/button/button.html', {
+    class: 'popup-done__button',
+    text: 'Ок, жду!',
+    type: 'submit',
+    attribute: 'data-popup-close="done"'
+    })
+  </div>
+</section>

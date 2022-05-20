@@ -72,8 +72,20 @@
 
   // .contact__form-button
   &__form-button {
+    position: relative;
     @media (min-width: ($xs+px)) {
       max-width: 224px;
+    }
+    &._loader-mini {
+      &::after {
+        display: none;
+      }
+      &._loader_active {
+        &::after {
+          display: block;
+        }
+        color: transparent;
+      }
     }
   }
   // .contact__policy
@@ -176,47 +188,36 @@
   // .contact__interactive-icon
   &__interactive-icon {
     position: absolute;
-
     z-index: -1;
+    height: auto;
+    pointer-events: none;
+
     &_yellow {
-      top: 19%;
-      left: -2%;
-      width: 480px;
-      height: 542px;
-      filter: blur(100px);
+      top: 0%;
+      left: 0%;
+      transform: translate(-43%, -37%) scale(1);
       @media (max-width: ($m+px)) {
-        top: 2%;
-        left: -26%;
-        width: 513px;
-        height: 567px;
-        filter: blur(126px);
       }
     }
     &_purple {
-      top: -17%;
-      right: 10%;
-      width: 342px;
-      height: 793px;
-      filter: blur(77px);
+      top: 0%;
+      right: 0%;
+      transform: translate(30%, -35%) scale(0.7);
       @media (max-width: ($m+px)) {
         top: unset;
-        bottom: -30%;
-        left: 10%;
-        transform: rotate(-90deg);
+        bottom: 0;
+        transform: translate(-15%, 32%) scale(0.9) rotate(-90deg);
       }
       @media (max-width: ($s+px)) {
-        bottom: -15%;
+        transform: translate(-15%, 17%) scale(1.9) rotate(-90deg);
       }
     }
     &_green {
-      filter: blur(121px);
-      bottom: -10%;
-      right: 10%;
-      width: 242px;
-      height: 350px;
+      bottom: 0%;
+      right: 0%;
+      transform: translate(32%, 48%) scale(1);
       @media (max-width: ($m+px)) {
-        right: 0;
-        transform: rotate(-90deg);
+        transform: translate(22%, 43%) scale(1.5);
       }
     }
   }

@@ -27,6 +27,7 @@ export default class Popups {
   }
 
   findClosePopup(target) {
+
     const findPopup = this.popups.find(
       (popup) =>
         popup.getAttribute(this.popupsAttribute) ===
@@ -46,8 +47,10 @@ export default class Popups {
 
   closeEvent(event) {
     const { target } = event;
+
     const popup = this.findClosePopup(target);
     if (popup) {
+
       this.close(popup);
     }
   }

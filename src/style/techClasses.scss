@@ -1,14 +1,7 @@
 @import "./constants.scss";
 
 // ..........................BUTTONS..............................
-._button {
-}
-._button:disabled,
-._button[disabled] {
-}
-._button:disabled:hover,
-._button[disabled]:hover {
-}
+
 ._button-play {
   position: relative;
   color: inherit;
@@ -282,6 +275,7 @@
   border-radius: 50%;
   font-size: 17px;
   pointer-events: auto;
+  color: $color-black;
   // .slider-button_left
   &_left {
     transform: translateX(-60%);
@@ -475,6 +469,7 @@ body._fixed {
 
 // ._input
 ._input {
+  font-family: inherit;
   font-style: normal;
   font-weight: 700;
   line-height: 140%;
@@ -504,6 +499,7 @@ body._fixed {
 
 // ._textarea
 ._textarea {
+  font-family: inherit;
   font-style: normal;
   font-weight: 700;
   line-height: 140%;
@@ -573,5 +569,42 @@ body._fixed {
     &:hover {
       transform: scale(1.14);
     }
+  }
+}
+// ...........................LOADER................................
+
+._loader:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+._loader-mini {
+  position: relative;
+}
+._loader-mini:after {
+  content: " ";
+  position: absolute;
+  left: calc(50% - 15px);
+  top: calc(50% - 15px);
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

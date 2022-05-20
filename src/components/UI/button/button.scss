@@ -28,3 +28,13 @@
     }
   }
 }
+.button:disabled,
+.button[disabled] {
+  cursor: auto;
+  background-color: $color-btn-disabled;
+}
+.button:disabled:hover,
+.button[disabled]:hover {
+  cursor: auto;
+  background-color: $color-btn-disabled;
+}

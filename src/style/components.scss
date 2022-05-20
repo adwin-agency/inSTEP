@@ -1,11 +1,14 @@
 // UI
 @import "../components/UI/burger/burger.scss";
+@import "../components/UI/icon/icon.scss";
 @import "../components/UI/button/button.scss";
 @import "../components/UI/social-box/social-box.scss";
 // POPUPS
 @import "../components/popups/card-popup/card-popup.scss";
 @import "../components/popups/consult-popup/consult-popup.scss";
 @import "../components/popups/video-popup/video-popup.scss";
+@import "../components/popups/image-popup/image-popup.scss";
+@import "../components/popups/done-popup/done-popup.scss";
 // SECTIONS
 @import "../components/sections/intro/intro.scss";
 @import "../components/sections/sponsors/sponsors.scss";
@@ -19,7 +22,7 @@
 @import "../components/sections/production/production.scss";
 @import "../components/sections/glass-tile/glass-tile.scss";
 @import "../components/sections/videos/videos.scss";
-@import "../components/sections/about/aboout.scss";
+@import "../components/sections/about/about.scss";
 @import "../components/sections/faq/faq.scss";
 @import "../components/sections/contact/contact.scss";
 // HEADER/FOOTER

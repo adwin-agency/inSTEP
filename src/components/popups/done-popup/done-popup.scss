@@ -1,0 +1,45 @@
+.popup-done {
+  z-index: $zIndex-l;
+  @media (max-width: ($s+px)) {
+    align-items: flex-start;
+    background-color: $color-white;
+  }
+  // .popup-done__container
+
+  &__container {
+    text-align: center;
+    @include adaptive-value("padding-top", 96, 73, $xxs);
+    @include adaptive-value("padding-bottom", 102, 10, $xxs);
+    @include adaptive-value("padding-left", 80, 10, $xxs);
+    @include adaptive-value("padding-right", 80, 10, $xxs);
+  }
+
+  // .popup-done__title
+
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+    @include adaptive-value("margin-bottom", 30, 12, $l);
+    @media (min-width: ($s+px)) {
+      max-width: 320px;
+    }
+  }
+
+  // .popup-done__text
+
+  &__text {
+    font-style: normal;
+    font-weight: 300;
+    line-height: 160%;
+    @media (min-width: ($s+px)) {
+      max-width: 320px;
+    }
+  }
+
+  // .popup-done__button
+
+  &__button {
+    margin-top: 27px;
+  }
+}

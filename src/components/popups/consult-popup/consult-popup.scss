@@ -24,10 +24,28 @@
       max-width: 350px;
     }
   }
+
+  &__form-title {
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+    text-align: center;
+  }
   // .popup-consult__form-button
 
   &__form-button {
     @include adaptive-value("margin-top", 31, 16, $xxs);
+    &._loader-mini {
+      &::after {
+        display: none;
+      }
+      &._loader_active {
+        &::after {
+          display: block;
+        }
+        color: transparent;
+      }
+    }
   }
 
   // .popup-consult__policy

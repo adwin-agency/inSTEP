@@ -177,19 +177,26 @@
   // .team__icon-purple-blure
   &__icon-purple-blure {
     position: absolute;
-    top: -25%;
-    right: 12%;
-    transform: scale(7);
+    height: auto;
+    top: 0;
+    right: 0;
+    transform: translate(44%, -67%) scale(1.4);
     z-index: -1;
+    pointer-events: none;
+    @media (max-width: ($s+px)) {
+      transform: translate(35%, -104%) scale(1.4);
+    }
   }
 
   // .team__icon-purple-light-blure
   &__icon-purple-light-blure {
+    height: auto;
     position: absolute;
-    top: 5%;
-    left: -17%;
-    transform: scale(5);
+    top: 0;
+    left: 0;
+    transform: translate(-76%, -24%) scale(1.4);
     z-index: -1;
+    pointer-events: none;
   }
   // .team__avatar
 

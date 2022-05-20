@@ -12,11 +12,11 @@ export default class Burger {
     this.burger.classList.toggle("_active");
     document.body.classList.toggle("_fixed");
 
-    if (this.menu.classList.contains("_active")) {
-      document.body.style.paddingRight = `${determineScrollWidth()}px`;
-    } else {
-      document.body.style.paddingRight = "";
-    }
+    // if (this.menu.classList.contains("_active")) {
+    //   document.body.style.paddingRight = `${determineScrollWidth()}px`;
+    // } else {
+    //   document.body.style.paddingRight = "";
+    // }
   }
 
   listener() {

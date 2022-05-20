@@ -202,13 +202,14 @@
   &__background-icon {
     position: absolute;
     top: 50%;
-    right: 10%;
-    transform: scale(8);
+    right: 0%;
+    height: auto;
+    pointer-events: none;
     z-index: -2;
-    @media (max-width: ($xs+px)) {
-      top: 33%;
-      right: 26%;
-      transform: scale(9);
+    transform: translate(31%, -43%) scale(1);
+
+    @media (max-width: ($s+px)) {
+      transform: translate(35%, -43%) scale(3);
     }
   }
 }

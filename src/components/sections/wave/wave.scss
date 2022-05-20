@@ -1,7 +1,9 @@
 .wave {
   background-color: $color-main-blue;
   position: relative;
-
+  @media (max-width: ($maxWidth+px)) {
+    max-width: 1920px;
+  }
   // .wave__icon
   &__icon {
     position: absolute;

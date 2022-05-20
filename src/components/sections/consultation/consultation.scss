@@ -1,13 +1,16 @@
 .consultation {
   // .consultation__container
+  background-image: url("../images/consultation/background.jpg");
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @media (max-width: ($maxWidth+px)) {
+    max-width: 1920px;
+  }
   &__container {
     @include adaptive-value("padding-top", 200, 57, $xxs);
     @include adaptive-value("padding-bottom", 100, 50, $xxs);
     position: relative;
-    background-image: url("../images/consultation/background.jpg");
-    background-position: center right;
-    background-repeat: no-repeat;
-    background-size: cover;
   }
   // .consultation__description
   &__description {
@@ -41,9 +44,17 @@
   // .consultation__star-icon
   &__star-icon {
     position: absolute;
-    right: 4%;
-    bottom: -9%;
-    transform: scale(5);
+    right: 0%;
+    bottom: 0%;
+    height: auto;
+    pointer-events: none;
+    transform: translate(43%, 56%) scale(1);
+    @media (max-width: ($s+px)) {
+      transform: translate(43%, 56%) scale(1.6);
+    }
+    @media (max-width: ($xs+px)) {
+      transform: translate(43%, 56%) scale(3);
+    }
   }
   // .consultation__title-accent
 

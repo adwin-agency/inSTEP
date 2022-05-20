@@ -4,6 +4,9 @@
   padding-bottom: 27px;
   min-width: 0;
   overflow: hidden;
+  @media (max-width: ($maxWidth+px)) {
+    max-width: 1920px;
+  }
   // .newsticker__box
   &__box {
     display: flex;

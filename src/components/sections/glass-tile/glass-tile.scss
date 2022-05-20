@@ -21,33 +21,43 @@
 
   &__bg-icon {
     position: absolute;
-    transform: scale(7);
+    height: auto;
     z-index: -1;
+    pointer-events: none;
+
     &_purple {
-      left: 18%;
-      top: 32%;
-      transform: scale(8);
+      left: 0%;
+      top: 50%;
+      transform: translate(-32%, -53%) scale(0.8);
+      @media (max-width: ($s+px)) {
+        transform: translate(-83%, -16%) scale(3.3);
+      }
       @media (max-width: ($m+px)) {
-        left: 60%;
-        top: 5%;
+        left: 100%;
+        top: 0;
+        transform: translate(-83%, -16%) scale(2.2);
       }
     }
     &_yellow {
-      left: 36%;
-      top: 88%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-53%, -37%) scale(0.8);
+
       @media (max-width: ($m+px)) {
         left: 0%;
         top: 50%;
+        transform: translate(-53%, -50%) scale(1.8);
       }
     }
     &_aqua {
-      left: 60%;
-      top: 35%;
-      transform: scale(10);
+      right: 0%;
+      top: 50%;
+      transform: translate(30%, -50%) scale(0.8);
+
       @media (max-width: ($m+px)) {
         left: 0%;
-        top: 70%;
-        transform: scale(9);
+        top: 100%;
+        transform: translate(-29%, -85%) scale(1.8);
       }
     }
   }
