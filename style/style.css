@@ -1502,6 +1502,12 @@ main {
   padding: 14px 30px;
 }
 
+.pay-info-plate__icon-mir {
+  max-width: unset;
+  width: auto;
+  height: auto;
+}
+
 .sponsors__contianer {
   display: -webkit-box;
   display: -ms-flexbox;
