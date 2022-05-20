@@ -555,6 +555,7 @@ main {
   border-radius: 50%;
   font-size: 17px;
   pointer-events: auto;
+  color: #3c3c3c;
 }
 
 ._slider-button_left {
@@ -1548,28 +1549,26 @@ main {
 
 .advantages-card__backgorund {
   position: absolute;
+  height: auto;
   z-index: -1;
 }
 
 .advantages-card__backgorund_bg-1 {
-  bottom: -34%;
-  left: 16%;
-  -webkit-transform: scale(3.5);
-      -ms-transform: scale(3.5);
-          transform: scale(3.5);
+  bottom: -31%;
+  left: 18%;
+  -webkit-transform: scale(2.3);
+      -ms-transform: scale(2.3);
+          transform: scale(2.3);
 }
 
 .advantages-card__backgorund_bg-2 {
-  top: -22%;
-  right: 0%;
-  -webkit-transform: scale(5);
-      -ms-transform: scale(5);
-          transform: scale(5);
+  top: -100%;
+  right: -37%;
 }
 
 .advantages-card__backgorund_bg-3 {
-  bottom: -32%;
-  left: 0%;
+  bottom: -43%;
+  left: -26%;
   -webkit-transform: scale(3.5);
       -ms-transform: scale(3.5);
           transform: scale(3.5);
@@ -1770,11 +1769,10 @@ main {
 
 .consultation__star-icon {
   position: absolute;
-  right: 4%;
-  bottom: -9%;
-  -webkit-transform: scale(5);
-      -ms-transform: scale(5);
-          transform: scale(5);
+  right: -44%;
+  bottom: -147%;
+  height: auto;
+  pointer-events: none;
 }
 
 .consultation__button {
@@ -1793,11 +1791,12 @@ main {
 
 .tile__background-icon {
   position: absolute;
-  left: 14%;
-  bottom: 11%;
-  -webkit-transform: scale(9);
-      -ms-transform: scale(9);
-          transform: scale(9);
+  left: 0%;
+  bottom: 0%;
+  -webkit-transform: translate(-40%, 42%);
+      -ms-transform: translate(-40%, 42%);
+          transform: translate(-40%, 42%);
+  height: auto;
   z-index: -1;
   pointer-events: none;
 }
@@ -2033,22 +2032,26 @@ main {
 
 .team__icon-purple-blure {
   position: absolute;
-  top: -25%;
-  right: 12%;
-  -webkit-transform: scale(7);
-      -ms-transform: scale(7);
-          transform: scale(7);
+  height: auto;
+  top: 0;
+  right: 0;
+  -webkit-transform: translate(44%, -67%) scale(1.4);
+      -ms-transform: translate(44%, -67%) scale(1.4);
+          transform: translate(44%, -67%) scale(1.4);
   z-index: -1;
+  pointer-events: none;
 }
 
 .team__icon-purple-light-blure {
+  height: auto;
   position: absolute;
-  top: 5%;
-  left: -17%;
-  -webkit-transform: scale(5);
-      -ms-transform: scale(5);
-          transform: scale(5);
+  top: 0;
+  left: 0;
+  -webkit-transform: translate(-76%, -24%) scale(1.4);
+      -ms-transform: translate(-76%, -24%) scale(1.4);
+          transform: translate(-76%, -24%) scale(1.4);
   z-index: -1;
+  pointer-events: none;
 }
 
 .team__avatar {
@@ -2163,31 +2166,33 @@ main {
 
 .glass-tile__bg-icon {
   position: absolute;
-  -webkit-transform: scale(7);
-      -ms-transform: scale(7);
-          transform: scale(7);
+  height: auto;
   z-index: -1;
+  pointer-events: none;
 }
 
 .glass-tile__bg-icon_purple {
-  left: 18%;
-  top: 32%;
-  -webkit-transform: scale(8);
-      -ms-transform: scale(8);
-          transform: scale(8);
+  left: 0%;
+  top: 50%;
+  -webkit-transform: translate(-32%, -53%) scale(0.8);
+      -ms-transform: translate(-32%, -53%) scale(0.8);
+          transform: translate(-32%, -53%) scale(0.8);
 }
 
 .glass-tile__bg-icon_yellow {
-  left: 36%;
-  top: 88%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-53%, -37%) scale(0.8);
+      -ms-transform: translate(-53%, -37%) scale(0.8);
+          transform: translate(-53%, -37%) scale(0.8);
 }
 
 .glass-tile__bg-icon_aqua {
-  left: 60%;
-  top: 35%;
-  -webkit-transform: scale(10);
-      -ms-transform: scale(10);
-          transform: scale(10);
+  right: 0%;
+  top: 50%;
+  -webkit-transform: translate(30%, -50%) scale(0.8);
+      -ms-transform: translate(30%, -50%) scale(0.8);
+          transform: translate(30%, -50%) scale(0.8);
 }
 
 .glass-tile-card {
@@ -2562,11 +2567,13 @@ main {
 .about__background-icon {
   position: absolute;
   top: 50%;
-  right: 10%;
-  -webkit-transform: scale(8);
-      -ms-transform: scale(8);
-          transform: scale(8);
+  right: 0%;
+  height: auto;
+  pointer-events: none;
   z-index: -2;
+  -webkit-transform: translate(31%, -43%) scale(1);
+      -ms-transform: translate(31%, -43%) scale(1);
+          transform: translate(31%, -43%) scale(1);
 }
 
 .faq__container {
@@ -2594,11 +2601,12 @@ main {
 
 .faq__interactive-icon {
   position: absolute;
-  left: 7%;
-  top: 81px;
-  -webkit-transform: scale(9);
-      -ms-transform: scale(9);
-          transform: scale(9);
+  left: 0%;
+  top: 50%;
+  height: auto;
+  -webkit-transform: translate(-47%, -56%) scale(0.8);
+      -ms-transform: translate(-47%, -56%) scale(0.8);
+          transform: translate(-47%, -56%) scale(0.8);
   z-index: -1;
 }
 
@@ -3067,19 +3075,11 @@ body {
   }
 
   .advantages-card__backgorund_bg-1 {
-    bottom: -10%;
-    left: 16%;
-    -webkit-transform: scale(5.5);
-        -ms-transform: scale(5.5);
-            transform: scale(5.5);
-  }
-
-  .advantages-card__backgorund_bg-3 {
-    bottom: -17%;
-    left: 0%;
-    -webkit-transform: scale(4.2);
-        -ms-transform: scale(4.2);
-            transform: scale(4.2);
+    bottom: -31%;
+    left: -20%;
+    -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+            transform: scale(1.3);
   }
 
   .team__main-name {
@@ -3129,20 +3129,12 @@ body {
         grid-column-start: span 3;
   }
 
-  .advantages-card__backgorund_bg-1 {
-    bottom: -4%;
-    left: 16%;
-    -webkit-transform: scale(4.5);
-        -ms-transform: scale(4.5);
-            transform: scale(4.5);
-  }
-
   .advantages-card__backgorund_bg-3 {
-    bottom: 16%;
-    left: 30%;
-    -webkit-transform: scale(4);
-        -ms-transform: scale(4);
-            transform: scale(4);
+    bottom: -22%;
+    left: 22%;
+    -webkit-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+            transform: scale(1.5);
   }
 
   .advantages-card__image-double {
@@ -3390,6 +3382,11 @@ body {
   .popup-card__specifications-row {
     -ms-grid-columns: 1fr 3fr;
     grid-template-columns: 1fr 3fr;
+  }
+
+  .advantages-card__backgorund_bg-3 {
+    bottom: -22%;
+    left: 0%;
   }
 }
 
@@ -4120,14 +4117,6 @@ body {
     max-width: 50%;
   }
 
-  .tile__background-icon {
-    left: 0%;
-    bottom: 11%;
-    -webkit-transform: scale(10);
-        -ms-transform: scale(10);
-            transform: scale(10);
-  }
-
   .glass-tile-card__combine-box {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -4200,21 +4189,27 @@ body {
   }
 
   .glass-tile__bg-icon_purple {
-    left: 60%;
-    top: 5%;
+    left: 100%;
+    top: 0;
+    -webkit-transform: translate(-83%, -16%) scale(2.2);
+        -ms-transform: translate(-83%, -16%) scale(2.2);
+            transform: translate(-83%, -16%) scale(2.2);
   }
 
   .glass-tile__bg-icon_yellow {
     left: 0%;
     top: 50%;
+    -webkit-transform: translate(-53%, -50%) scale(1.8);
+        -ms-transform: translate(-53%, -50%) scale(1.8);
+            transform: translate(-53%, -50%) scale(1.8);
   }
 
   .glass-tile__bg-icon_aqua {
     left: 0%;
-    top: 70%;
-    -webkit-transform: scale(9);
-        -ms-transform: scale(9);
-            transform: scale(9);
+    top: 100%;
+    -webkit-transform: translate(-29%, -85%) scale(1.8);
+        -ms-transform: translate(-29%, -85%) scale(1.8);
+            transform: translate(-29%, -85%) scale(1.8);
   }
 
   .glass-tile-card {
@@ -4502,11 +4497,9 @@ body {
   }
 
   .tile__background-icon {
-    left: 23%;
-    bottom: 1%;
-    -webkit-transform: scale(6);
-        -ms-transform: scale(6);
-            transform: scale(6);
+    -webkit-transform: translate(-30%, 31%) scale(1.7);
+        -ms-transform: translate(-30%, 31%) scale(1.7);
+            transform: translate(-30%, 31%) scale(1.7);
   }
 
   .tile-card {
@@ -4531,6 +4524,18 @@ body {
     font-size: 100px;
   }
 
+  .team__icon-purple-blure {
+    -webkit-transform: translate(35%, -104%) scale(1.4);
+        -ms-transform: translate(35%, -104%) scale(1.4);
+            transform: translate(35%, -104%) scale(1.4);
+  }
+
+  .glass-tile__bg-icon_purple {
+    -webkit-transform: translate(-83%, -16%) scale(3.3);
+        -ms-transform: translate(-83%, -16%) scale(3.3);
+            transform: translate(-83%, -16%) scale(3.3);
+  }
+
   .videos__title {
     -ms-grid-column: span 18;
         grid-column-start: span 18;
@@ -4539,6 +4544,18 @@ body {
   .videos__card_l {
     -ms-grid-column: span 18;
         grid-column-start: span 18;
+  }
+
+  .about__background-icon {
+    -webkit-transform: translate(35%, -43%) scale(3);
+        -ms-transform: translate(35%, -43%) scale(3);
+            transform: translate(35%, -43%) scale(3);
+  }
+
+  .faq__interactive-icon {
+    -webkit-transform: translate(-47%, -71%) scale(1.9);
+        -ms-transform: translate(-47%, -71%) scale(1.9);
+            transform: translate(-47%, -71%) scale(1.9);
   }
 
   .accordion__item {
@@ -4687,14 +4704,6 @@ body {
     -webkit-transform: translate(0%, 100%);
         -ms-transform: translate(0%, 100%);
             transform: translate(0%, 100%);
-  }
-
-  .about__background-icon {
-    top: 33%;
-    right: 26%;
-    -webkit-transform: scale(9);
-        -ms-transform: scale(9);
-            transform: scale(9);
   }
 
   .contact__form-footer {
