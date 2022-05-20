@@ -1769,10 +1769,13 @@ main {
 
 .consultation__star-icon {
   position: absolute;
-  right: -44%;
-  bottom: -147%;
+  right: 0%;
+  bottom: 0%;
   height: auto;
   pointer-events: none;
+  -webkit-transform: translate(43%, 56%) scale(1);
+      -ms-transform: translate(43%, 56%) scale(1);
+          transform: translate(43%, 56%) scale(1);
 }
 
 .consultation__button {
@@ -2827,43 +2830,32 @@ main {
 .contact__interactive-icon {
   position: absolute;
   z-index: -1;
+  height: auto;
+  pointer-events: none;
 }
 
 .contact__interactive-icon_yellow {
-  top: 19%;
-  left: -2%;
-  width: 480px;
-  height: 542px;
-}
-
-@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-  .contact__interactive-icon_yellow {
-    -webkit-filter: blur(100px);
-            filter: blur(100px);
-  }
+  top: 0%;
+  left: 0%;
+  -webkit-transform: translate(-43%, -37%) scale(1);
+      -ms-transform: translate(-43%, -37%) scale(1);
+          transform: translate(-43%, -37%) scale(1);
 }
 
 .contact__interactive-icon_purple {
-  top: -17%;
-  right: 10%;
-  width: 342px;
-  height: 793px;
-  -webkit-filter: blur(77px);
-          filter: blur(77px);
+  top: 0%;
+  right: 0%;
+  -webkit-transform: translate(30%, -35%) scale(0.7);
+      -ms-transform: translate(30%, -35%) scale(0.7);
+          transform: translate(30%, -35%) scale(0.7);
 }
 
 .contact__interactive-icon_green {
-  bottom: -10%;
-  right: 10%;
-  width: 242px;
-  height: 350px;
-}
-
-@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-  .contact__interactive-icon_green {
-    -webkit-filter: blur(121px);
-            filter: blur(121px);
-  }
+  bottom: 0%;
+  right: 0%;
+  -webkit-transform: translate(32%, 48%) scale(1);
+      -ms-transform: translate(32%, 48%) scale(1);
+          transform: translate(32%, 48%) scale(1);
 }
 
 .header {
@@ -4292,34 +4284,18 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .contact__interactive-icon_yellow {
-    top: 2%;
-    left: -26%;
-    width: 513px;
-    height: 567px;
-  }
-
-@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-    .contact__interactive-icon_yellow {
-      -webkit-filter: blur(126px);
-              filter: blur(126px);
-    }
-}
-
   .contact__interactive-icon_purple {
     top: unset;
-    bottom: -30%;
-    left: 10%;
-    -webkit-transform: rotate(-90deg);
-        -ms-transform: rotate(-90deg);
-            transform: rotate(-90deg);
+    bottom: 0;
+    -webkit-transform: translate(-15%, 32%) scale(0.9) rotate(-90deg);
+        -ms-transform: translate(-15%, 32%) scale(0.9) rotate(-90deg);
+            transform: translate(-15%, 32%) scale(0.9) rotate(-90deg);
   }
 
   .contact__interactive-icon_green {
-    right: 0;
-    -webkit-transform: rotate(-90deg);
-        -ms-transform: rotate(-90deg);
-            transform: rotate(-90deg);
+    -webkit-transform: translate(22%, 43%) scale(1.5);
+        -ms-transform: translate(22%, 43%) scale(1.5);
+            transform: translate(22%, 43%) scale(1.5);
   }
 
   .header__wrapper::after {
@@ -4486,6 +4462,12 @@ body {
     top: 10%;
   }
 
+  .consultation__star-icon {
+    -webkit-transform: translate(43%, 56%) scale(1.6);
+        -ms-transform: translate(43%, 56%) scale(1.6);
+            transform: translate(43%, 56%) scale(1.6);
+  }
+
   .consultation__text {
     text-align: center;
   }
@@ -4574,7 +4556,9 @@ body {
   }
 
   .contact__interactive-icon_purple {
-    bottom: -15%;
+    -webkit-transform: translate(-15%, 17%) scale(1.9) rotate(-90deg);
+        -ms-transform: translate(-15%, 17%) scale(1.9) rotate(-90deg);
+            transform: translate(-15%, 17%) scale(1.9) rotate(-90deg);
   }
 
   .header__nav {
@@ -4644,6 +4628,12 @@ body {
     -webkit-transform: translateY(-50%) scale(2);
         -ms-transform: translateY(-50%) scale(2);
             transform: translateY(-50%) scale(2);
+  }
+
+  .consultation__star-icon {
+    -webkit-transform: translate(43%, 56%) scale(3);
+        -ms-transform: translate(43%, 56%) scale(3);
+            transform: translate(43%, 56%) scale(3);
   }
 
   .team__item-footnote {
