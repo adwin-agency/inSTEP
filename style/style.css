@@ -751,6 +751,7 @@ main {
 }
 
 ._input {
+  font-family: inherit;
   font-style: normal;
   font-weight: 700;
   line-height: 140%;
@@ -783,6 +784,7 @@ main {
 }
 
 ._textarea {
+  font-family: inherit;
   font-style: normal;
   font-weight: 700;
   line-height: 140%;
@@ -2305,7 +2307,7 @@ main {
 .videos__card_text-right {
   -webkit-box-align: end;
       -ms-flex-align: end;
-          align-items: end;
+          align-items: flex-end;
   text-align: right;
 }
 
@@ -2386,7 +2388,7 @@ main {
           flex-direction: column;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
-          justify-content: end;
+          justify-content: flex-end;
   color: #ffffff;
 }
 
@@ -2402,6 +2404,7 @@ main {
   position: relative;
   z-index: 10;
   max-width: 440px;
+  margin-top: auto;
 }
 
 .videos-card__play {
