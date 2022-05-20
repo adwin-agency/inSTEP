@@ -874,6 +874,49 @@ main {
   pointer-events: none;
 }
 
+._loader {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+
+._loader:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  -webkit-animation: lds-dual-ring 1.2s linear infinite;
+          animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@-webkit-keyframes lds-dual-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 .burger {
   width: 100%;
   height: 100%;
@@ -951,6 +994,10 @@ main {
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+
+.icon {
+  pointer-events: none;
 }
 
 .button {
@@ -1165,6 +1212,13 @@ main {
   padding-bottom: 37px;
 }
 
+.popup-consult__form-title {
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+  text-align: center;
+}
+
 .popup-consult__policy {
   font-style: normal;
   font-weight: 300;
@@ -1182,11 +1236,33 @@ main {
 
 .popup-video {
   z-index: 500;
+  background-color: rgba(61, 78, 129, 0.7);
+}
+
+.popup-video._video-onload .popup-video__container {
+  display: block;
+}
+
+.popup-video._video-onload .popup-video__loader {
+  display: none;
+}
+
+.popup-video._video-onerror .popup-video__error {
+  display: block;
+}
+
+.popup-video._video-onerror .popup-video__video-box {
+  display: none;
+}
+
+.popup-video._video-onerror .popup-video__loader {
+  display: none;
 }
 
 .popup-video__container {
+  display: none;
   background-color: transparent;
-  max-width: 88%;
+  max-width: 100%;
   max-height: 88%;
 }
 
@@ -1199,24 +1275,69 @@ main {
   cursor: pointer;
 }
 
-.popup-video__video-box::before {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 34px;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: -webkit-transform 0.3s;
-  -o-transition: transform 0.3s;
-  transition: transform 0.3s;
-  transition: transform 0.3s, -webkit-transform 0.3s;
+.popup-video__video {
+  display: block;
+  max-height: 90vh;
+}
+
+.popup-video__error {
+  text-align: center;
+  width: 100%;
+  color: #ffffff;
+  display: none;
+}
+
+.popup-image {
+  z-index: 500;
+  background-color: rgba(61, 78, 129, 0.7);
+}
+
+.popup-image._image-onload .popup-image__container {
+  display: block;
+}
+
+.popup-image._image-onload .popup-image__loader {
+  display: none;
+}
+
+.popup-image._image-onerror .popup-image__error {
+  display: block;
+}
+
+.popup-image._image-onerror .popup-image__video-box {
+  display: none;
+}
+
+.popup-image._image-onerror .popup-image__loader {
+  display: none;
+}
+
+.popup-image__container {
+  display: none;
+  background-color: transparent;
+  max-width: 100%;
+  max-height: 88%;
+}
+
+.popup-image__close {
   color: #ffffff;
 }
 
-.popup-video__video {
+.popup-image__image-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-image__image {
+  max-height: 90vh;
   display: block;
+}
+
+.popup-image__error {
+  text-align: center;
+  width: 100%;
+  color: #ffffff;
+  display: none;
 }
 
 .intro__container {
@@ -1322,21 +1443,15 @@ main {
 
 .intro__interactive-icon_star {
   position: absolute;
-  top: 7%;
-  right: 11%;
-  -webkit-transform: scale(4);
-      -ms-transform: scale(4);
-          transform: scale(4);
+  top: -23%;
+  right: -12%;
   z-index: -1;
 }
 
 .intro__interactive-icon_rct {
   position: absolute;
-  bottom: 3%;
-  left: 11%;
-  -webkit-transform: scale(5) rotate(34deg);
-      -ms-transform: scale(5) rotate(34deg);
-          transform: scale(5) rotate(34deg);
+  bottom: -34%;
+  left: -23%;
   z-index: -1;
 }
 
@@ -1508,6 +1623,13 @@ main {
   line-height: 100%;
 }
 
+.advantages-card__text {
+  font-style: normal;
+  font-weight: 300;
+  line-height: 160%;
+  color: #595959;
+}
+
 .wave {
   background-color: #3d4e81;
   position: relative;
@@ -1611,14 +1733,17 @@ main {
   white-space: nowrap;
 }
 
-.no-webp .consultation__container{
+.no-webp .consultation{
   background-image: url("../images/consultation/background.jpg"); }
 
-.consultation__container {
-  position: relative;
+.consultation {
   background-position: center right;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.consultation__container {
+  position: relative;
 }
 
 .consultation__description {
@@ -2701,8 +2826,13 @@ main {
   left: -2%;
   width: 480px;
   height: 542px;
-  -webkit-filter: blur(100px);
-          filter: blur(100px);
+}
+
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .contact__interactive-icon_yellow {
+    -webkit-filter: blur(100px);
+            filter: blur(100px);
+  }
 }
 
 .contact__interactive-icon_purple {
@@ -2715,12 +2845,17 @@ main {
 }
 
 .contact__interactive-icon_green {
-  -webkit-filter: blur(121px);
-          filter: blur(121px);
   bottom: -10%;
   right: 10%;
   width: 242px;
   height: 350px;
+}
+
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .contact__interactive-icon_green {
+    -webkit-filter: blur(121px);
+            filter: blur(121px);
+  }
 }
 
 .header {
@@ -2921,6 +3056,14 @@ body {
 
   .popup-card__button {
     max-width: 335px;
+  }
+
+  .popup-video__container {
+    max-width: 88%;
+  }
+
+  .popup-image__container {
+    max-width: 88%;
   }
 
   .advantages-card__backgorund_bg-1 {
@@ -3234,7 +3377,7 @@ body {
   }
 
   .advantages-card__text {
-    margin-top: 37px;
+    margin-top: 25px;
   }
 }
 
@@ -3429,7 +3572,27 @@ body {
     margin-top: 31px;
   }
 
+  .popup-video__close {
+    top: -40px;
+  }
+
+  .popup-video__close {
+    right: -35px;
+  }
+
   .popup-video__video {
+    border-radius: 20px;
+  }
+
+  .popup-image__close {
+    top: -40px;
+  }
+
+  .popup-image__close {
+    right: -35px;
+  }
+
+  .popup-image__image-box {
     border-radius: 20px;
   }
 
@@ -3531,6 +3694,10 @@ body {
 
   .advantages-card__title {
     margin-top: -54px;
+  }
+
+  .advantages-card__title {
+    margin-bottom: 40px;
   }
 
   .wave__container {
@@ -3930,6 +4097,20 @@ body {
   }
 }
 
+@media (max-width: 1920px) {
+  .wave {
+    max-width: 1920px;
+  }
+
+  .newsticker {
+    max-width: 1920px;
+  }
+
+  .consultation {
+    max-width: 1920px;
+  }
+}
+
 @media (max-width: 1367.5px) {
   .advantages-card__body_max {
     max-width: 50%;
@@ -4121,9 +4302,14 @@ body {
     left: -26%;
     width: 513px;
     height: 567px;
-    -webkit-filter: blur(126px);
-            filter: blur(126px);
   }
+
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    .contact__interactive-icon_yellow {
+      -webkit-filter: blur(126px);
+              filter: blur(126px);
+    }
+}
 
   .contact__interactive-icon_purple {
     top: unset;
@@ -4421,6 +4607,22 @@ body {
     gap: 37px;
   }
 
+  .popup-video__close {
+    top: -35px;
+  }
+
+  .popup-video__close {
+    right: 0px;
+  }
+
+  .popup-image__close {
+    top: -35px;
+  }
+
+  .popup-image__close {
+    right: 0px;
+  }
+
   .wave__icon {
     -webkit-transform: translateY(-50%) scale(2);
         -ms-transform: translateY(-50%) scale(2);
@@ -4658,6 +4860,10 @@ body {
     border-radius: 16px;
   }
 
+  .popup-image__image-box {
+    border-radius: 16px;
+  }
+
   .intro {
     margin-top: 90px;
   }
@@ -4753,8 +4959,12 @@ body {
     margin-top: -36px;
   }
 
+  .advantages-card__title {
+    margin-bottom: 15px;
+  }
+
   .advantages-card__text {
-    margin-top: 25px;
+    margin-top: 20px;
   }
 
   .wave__container {
@@ -5154,6 +5364,38 @@ body {
     );
   }
 
+  .popup-video__close {
+    top: calc(
+      -35px + -5 * ((
+              100vw - 520.5px
+            ) / 1399.5)
+    );
+  }
+
+  .popup-video__close {
+    right: calc(
+      0px + -35 * ((
+              100vw - 520.5px
+            ) / 1399.5)
+    );
+  }
+
+  .popup-image__close {
+    top: calc(
+      -35px + -5 * ((
+              100vw - 520.5px
+            ) / 1399.5)
+    );
+  }
+
+  .popup-image__close {
+    right: calc(
+      0px + -35 * ((
+              100vw - 520.5px
+            ) / 1399.5)
+    );
+  }
+
   .videos__card_l .videos-card__play {
     top: calc(
       25px + 119 * ((
@@ -5480,6 +5722,14 @@ body {
     );
   }
 
+  .popup-image__image-box {
+    border-radius: calc(
+      16px + 4 * ((
+              100vw - 375.5px
+            ) / 1544.5)
+    );
+  }
+
   .intro {
     margin-top: calc(
       90px + 46 * ((
@@ -5643,6 +5893,14 @@ body {
   .advantages-card__title {
     margin-top: calc(
       -36px + -18 * ((
+              100vw - 375.5px
+            ) / 1544.5)
+    );
+  }
+
+  .advantages-card__title {
+    margin-bottom: calc(
+      15px + 25 * ((
               100vw - 375.5px
             ) / 1544.5)
     );
@@ -6506,7 +6764,7 @@ body {
 
   .advantages-card__text {
     margin-top: calc(
-      25px + 12 * ((
+      20px + 5 * ((
               100vw - 375.5px
             ) / 649)
     );
@@ -6729,18 +6987,6 @@ body {
     text-decoration: underline;
   }
 
-  .popup-video__video-box:hover::before {
-    -webkit-transform: translate(-50%, -50%) scale(1.14);
-        -ms-transform: translate(-50%, -50%) scale(1.14);
-            transform: translate(-50%, -50%) scale(1.14);
-  }
-
-  .popup-video__video-box:active::before {
-    -webkit-transform: translate(-50%, -50%) scale(0.9);
-        -ms-transform: translate(-50%, -50%) scale(0.9);
-            transform: translate(-50%, -50%) scale(0.9);
-  }
-
   .tile-card:hover {
     -webkit-transform: scale(1.01);
         -ms-transform: scale(1.01);
@@ -6793,4 +7039,4 @@ body {
   }
 }
 
-.webp .consultation__container{ background-image: url(../images/consultation/background.webp); }
+.webp .consultation{ background-image: url(../images/consultation/background.webp); }

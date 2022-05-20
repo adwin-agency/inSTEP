@@ -14,7 +14,7 @@
   <meta name="author" content="Adwin Agancy">
   <title>inSTEP</title>
 </head>
-<link rel="stylesheet" type="text/css" href="./style/style.build.css?_v=20220518151332">
+<link rel="stylesheet" type="text/css" href="./style/style.build.css?_v=20220520102841">
 
 <body>
   <header class="header">
@@ -118,12 +118,11 @@
   <a class="social-box__icon _icon-telegram" href="#" target="_blank" rel="noopener noreferrer"></a>
   <a class="social-box__icon _icon-vk" href="#" target="_blank" rel="noopener noreferrer"></a>
 </div>
-      <svg class="intro__interactive-icon intro__interactive-icon_star icon-Star-1 icon" >
-  <use xlink:href="./icons/sprite/sprite.svg#Star-1"></use>
-</svg>
-      <svg class="intro__interactive-icon intro__interactive-icon_rct icon-Rectangle-48 icon" >
-  <use xlink:href="./icons/sprite/sprite.svg#Rectangle-48"></use>
-</svg>
+      
+      <img class="intro__interactive-icon intro__interactive-icon_star" src="images/background-body/Star 1.png" alt="">
+      <img class="intro__interactive-icon intro__interactive-icon_rct" src="images/background-body/Rectangle 48.png"
+        alt="">
+      
     </div>
     <div class="intro__advantages intro__advantages_mobile">
       <div class="intro__advantages-box">
@@ -167,7 +166,7 @@
         </div>
 
         <div class="advantages-card__body advantages-card__body_max">
-          <span class="advantages-card__number">01</span>
+          <span class="advantages-card__number">.01</span>
           <h2 class="advantages-card__title _h2 _txt-accent-blue">Большой опыт в сфере и внимание к каждому клиенту</h2>
           <p class="advantages-card__text _txt-m">Руководитель компании — протезист, который сам пользуется протезом
             ноги
@@ -185,7 +184,7 @@
       <div
         class="advantages__card advantages-card advantages-card_full advantages-card_space-between advantages-card_margin-minus advantages-card_mobile-reverse">
         <div class="advantages-card__body advantages-card__body_medium advantages-card__body_align-center ">
-          <span class="advantages-card__number">02</span>
+          <span class="advantages-card__number">.02</span>
           <h2 class="advantages-card__title _h2 _txt-accent-blue">Качественные материалы и передовые технологии</h2>
           <p class="advantages-card__text _txt-m">Наша продукция изготавливается из гипоаллергенных пластиков и
             специальных сплавов алюминия нового поколения. Несмотря на
@@ -214,7 +213,7 @@
       <img class="advantages-card__image" src="images/advantages/image_4.jpg" alt="work-process">
       <div class="advantages__card advantages-card">
         <div class="advantages-card__body advantages-card__body_min">
-          <span class="advantages-card__number">03</span>
+          <span class="advantages-card__number">.03</span>
           <h2 class="advantages-card__title _h2 _txt-accent-blue">Индивидуальный подбор комплектующих, собственное
             производство</h2>
           <p class="advantages-card__text _txt-m">Подбираем комплектующие, основываясь на потребностях клиента: его
@@ -227,7 +226,7 @@
       </div>
       <div class="advantages__card advantages-card">
         <div class="advantages-card__body advantages-card__body_min">
-          <span class="advantages-card__number">04</span>
+          <span class="advantages-card__number">.04</span>
           <h2 class="advantages-card__title _h2 _txt-accent-blue">Помощь в получении компенсации от государства</h2>
           <p class="advantages-card__text _txt-m">Вы можете получить от государства компенсацию за протез, вплоть до
             полной его стоимости. В нашей команде работает
@@ -316,7 +315,7 @@
     </div>
   </div>
 </section>
-      <section class="consultation">
+      <section class="consultation _container">
   <div class="consultation__container _container">
     <div class="consultation__description">
       <h2 class="consultation__title _h1">У нас вы найдёте
@@ -625,13 +624,15 @@
     <div class="videos__grid">
       <h2 class="videos__title _h2">Истории успеха</h2>
       <div class="videos__card videos-card videos__card_l">
-        <span class="videos-card__play _button-play_l-adaptive _icon-play" data-popup-media-open="video"></span>
+        <span class="videos-card__play _button-play_l-adaptive _icon-play" data-popup-media-open="image"
+        data-url-image="images/testы.jpg"></span>
         <img class="videos-card__poster" src="images/videos/poster_1.jpg" alt="video-poster">
         <h3 class="videos-card__title _h4">Человек работающий геодезистом встал на ноги и вернулся через 2 месяца на
           работу, проходя по 16 км в день</h3>
       </div>
       <div class="videos__card videos-card videos__card_s">
-        <span class="videos-card__play _icon-play _button-play" data-popup-media-open="video"></span>
+        <span class="videos-card__play _icon-play _button-play" data-popup-media-open="video"
+         data-url-video="../files/test-video.mp4"></span>
         <img class="videos-card__poster" src="images/videos/poster_2.jpg" alt="video-poster">
         <h3 class="videos-card__title _h4">После изготовления протеза Тимуру, он встал на сноуборд и успешно начал его
           осваивать</h3>
@@ -645,7 +646,8 @@
         <h3 class="videos-card__title _h4">Ещё один пример реализованной работы с фото или видео</h3>
       </div>
       <div class="videos__card videos-card videos__card_m videos__card_text-right">
-        <span class="videos-card__play _button-play _icon-play" data-popup-media-open="video"></span>
+        <span class="videos-card__play _button-play _icon-play" data-popup-media-open="image"
+         data-url-image="images/test.jpg"></span>
         <img class="videos-card__poster" src="images/videos/poster_5.jpg" alt="video-poster">
         <h3 class="videos-card__title _h4">Протез девочке которая активно ведет тик ток</h3>
       </div>
@@ -654,7 +656,8 @@
       <div class="swiper-wrapper">
         <div class="videos__slider-item swiper-slide">
           <img class="videos__slider-image" src="images/videos/poster_4.jpg" alt="history-slide">
-          <span class="videos__slider-play _button-play_l _icon-play" data-popup-media-open="video"></span>
+          <span class="videos__slider-play _button-play_l _icon-play" data-popup-media-open="video"
+          data-url-video="../files/test-vieo.mp4"></span>
         </div>
         <div class="videos__slider-item swiper-slide">
           <img class="videos__slider-image" src="images/videos/poster_4.jpg" alt="history-slide">
@@ -865,17 +868,17 @@
         ниже и наш специалист свяжется с
         вами в ближайшее время</p>
 
-      <form class="contact__form" name="contacts">
+      <form class="contact__form" name="contacts" data-form-js>
         <div class="_form-twice">
-          <label class="_lable _icon-warning">
+          <label class="_lable _icon-warning"  data-form-input-js>
             <span class="_lable-title _txt-s">Представьтесь</span>
-            <input class="_input _txt-m" type="text" name="name" required>
-            <span class="_input-error _txt-s">Обязательное поле</span>
+            <input class="_input _txt-m" type="text" name="name" minlength="2" required>
+            <span class="_input-error _txt-s" data-form-error-js>Обязательное поле</span>
           </label>
-          <label class="_lable _icon-warning">
+          <label class="_lable _icon-warning" data-form-input-js>
             <span class="_lable-title _txt-s">Контактный телефон</span>
             <input class="_input _txt-m" type="tel" name="phone" required>
-            <span class="_input-error _txt-s">Обязательное поле</span>
+            <span class="_input-error _txt-s" data-form-error-js>Обязательное поле</span>
           </label>
         </div>
         <label class="_lable">
@@ -1031,6 +1034,7 @@
   <div class="popup-consult__container _popup-content">
     <button class="popup-consult__close _icon-close _popup-close" data-popup-close="consult"></button>
     <form class="popup-consult__form">
+      <legend class="popup-consult__form-title _h4">Запись на бесплатную консультацию</legend>
       <label class="_lable _icon-warning">
         <span class="_lable-title _txt-s">Представьтесь</span>
         <input class="_input _txt-m" type="tel" name="name" required>
@@ -1044,7 +1048,7 @@
       <button class="popup-consult__form-button button" type="submit"  >
   Записаться
 </button>
-      <p class="popup-consult__policy _txt-s">Нажимая кнопку "Отправить", вы соглашаетесь с <a href="#" target="_blank"
+      <p class="popup-consult__policy _txt-s">Нажимая кнопку "Записаться", вы соглашаетесь с <a href="#" target="_blank"
           rel="noopener noreferrer">Политикой конфиденциальности</a></p>
     </form>
   </div>
@@ -1052,10 +1056,22 @@
       <section class="popup-video _popup-wrapper" data-popup-media="video" data-popup-media-close="video">
   <div class="popup-video__container _popup-media-content ">
     <button class="popup-video__close _icon-close _popup-close" data-popup-media-close="video"></button>
-    <div class="popup-video__video-box _icon-play">
-      <video class="popup-video__video" src="../files/test-video.mp4"></video>
+    <div class="popup-video__video-box">
+      <video class="popup-video__video" src="" controls></video>
     </div>
   </div>
+  <div class="popup-video__loader _loader"></div>
+  <h3 class="popup-video__error _h2">Кажется с этим видео что то не так :(</h3>
+</section>
+      <section class="popup-image _popup-wrapper" data-popup-media="image" data-popup-media-close="image">
+  <div class="popup-image__container _popup-media-content ">
+    <button class="popup-image__close _icon-close _popup-close" data-popup-media-close="image"></button>
+    <div class="popup-image__image-box">
+      <img class="popup-image__image" src=""></img>
+    </div>
+  </div>
+  <div class="popup-image__loader _loader"></div>
+  <h3 class="popup-image__error _h2">Не смогли загрузить изображение :(</h3>
 </section>
     </div>
   </main>
@@ -1102,6 +1118,6 @@
 </footer>
 </body>
 
-<script src="./js/app.build.js?_v=20220518151332"></script>
+<script src="./js/app.build.js?_v=20220520102841"></script>
 
 </html>
