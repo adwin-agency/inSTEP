@@ -1867,6 +1867,12 @@ main {
           transform: translate(43%, 56%) scale(1);
 }
 
+.consultation__text {
+  font-style: normal;
+  font-weight: 300;
+  line-height: 160%;
+}
+
 .consultation__button {
   max-width: 358px;
 }
