@@ -14,7 +14,7 @@
   <meta name="author" content="Adwin Agancy">
   <title>inSTEP</title>
 </head>
-<link rel="stylesheet" type="text/css" href="./style/style.build.css?_v=20220520134038">
+<link rel="stylesheet" type="text/css" href="./style/style.build.css?_v=20220523160932">
 
 <body>
   <header class="header">
@@ -36,19 +36,19 @@
     <nav class="header__nav _menu">
       <ul class="header__list">
         <li class="header__item">
-          <a class="header__link" href="#">О компании</a>
+          <a class="header__link" href="#" data-scroll-from="company">О компании</a>
         </li>
         <li class="header__item">
-          <a class="header__link" href="#">Виды протезов</a>
+          <a class="header__link" href="#" data-scroll-from="prostheses">Виды протезов</a>
         </li>
         <li class="header__item">
-          <a class="header__link" href="#">изготовление</a>
+          <a class="header__link" href="#" data-scroll-from="production">изготовление</a>
         </li>
         <li class="header__item">
-          <a class="header__link" href="#">сообщество</a>
+          <a class="header__link" href="#" data-scroll-from="community">сообщество</a>
         </li>
         <li class="header__item">
-          <a class="header__link" href="#">Контакты</a>
+          <a class="header__link" href="#" data-scroll-from="сontacts">Контакты</a>
         </li>
       </ul>
 
@@ -57,7 +57,7 @@
         <p class="header__phone-footnote">ежедневно с 10 до 17</p>
       </div>
 
-      <button class="header__button button" type="button"  data-popup-open="consult">
+      <button class="header__button button" type="button"  data-popup-form-open="consult">
   бесплатная консультация
 </button>
     </nav>
@@ -146,7 +146,7 @@
     <img class="sponsors__icon" src="./icons/logo-mobile.svg" alt="brand-instep">
   </div>
 </section>
-      <section class="advantages">
+      <section class="advantages" data-scroll-to="company">
   <div class="advantages__container _container">
     <h2 class="advantages__title _h1">С нами
       <span class="advantages__title-accent _txt-accent-blue">легко, быстро и удобно сотрудничать</span>
@@ -320,7 +320,7 @@
         необходимую
         комплектацию протеза, учитывая как
         ваши финансовые возможности, так и индивидуальные параметры.</p>
-      <button class="consultation__button button" type="button"  data-popup-open="consult">
+      <button class="consultation__button button" type="button"  data-popup-form-open="consult">
   бесплатная консультация
 </button>
     </div>
@@ -330,36 +330,41 @@
     <img class="consultation__star-icon" src="images/background-body/Star 2.png" alt="">
   </div>
 </section>
-      <section class="tile">
+      <section class="tile" data-scroll-to="prostheses">
   <div class="tile__container _container">
     <div class="tile__card tile-card tile-card_large tile-card_purple" data-popup-open="card">
       <span class="tile-card__icon _icon-lower-leg-prosthesis"></span>
       <h2 class="tile-card__title _h4">Протез голени</h2>
       <p class="tile-card__text tile-card__text_long _txt-m">Предназначенны при протезировании на уровне голени любого
         уровня</p>
+      <button class="tile-card__btn-more _txt-s">Подробнее</button>
     </div>
 
     <div class="tile__card tile-card tile-card_large tile-card_aqua" data-popup-open="card">
       <span class="tile-card__icon _icon-hip-prosthesis"></span>
       <h2 class="tile-card__title _h4">Протез бедра</h2>
       <p class="tile-card__text _txt-m">Предназначенны при ампутации на уровне бедра (выше колена)</p>
+      <button class="tile-card__btn-more _txt-s">Подробнее</button>
     </div>
 
     <div class="tile__card tile-card tile-card_lilac" data-popup-open="card">
       <span class="tile-card__icon _icon-bionic-prosthesis"></span>
       <h2 class="tile-card__title _h4">Бионический протез</h2>
       <p class="tile-card__text _txt-m">Вы сами контролируете сжатие и разжатие электронной кисти</p>
+      <button class="tile-card__btn-more _txt-s">Подробнее</button>
     </div>
 
     <div class="tile__card tile-card tile-card_ivory" data-popup-open="card">
       <span class="tile-card__icon _icon-cosmetic-prosthesis"></span>
       <h2 class="tile-card__title _h4">Косметический протез</h2>
       <p class="tile-card__text _txt-m">Максимально возможно приближены к анатомической конечности</p>
+      <button class="tile-card__btn-more _txt-s">Подробнее</button>
     </div>
     <div class="tile__card tile-card tile-card_pastel" data-popup-open="card">
       <span class="tile-card__icon _icon-traction-prosthesis"></span>
       <h2 class="tile-card__title _h4">Тяговый протез</h2>
       <p class="tile-card__text _txt-m">Управляются с помощью специальной тяги, путём ее натяжения</p>
+      <button class="tile-card__btn-more _txt-s">Подробнее</button>
     </div>
     <img class="tile__background-icon" src="images/background-body/Rectangle 72.png" alt="">
   </div>
@@ -461,7 +466,7 @@
     </div>
   </div>
 </section>
-      <section class="production">
+      <section class="production" data-scroll-to="production">
   <div class="production__container _container">
     <h2 class="production__title _h2">Изготовление протезов:
       <span class="production__title-accent _txt-accent-blue">быстро и профессионально</span>
@@ -500,7 +505,7 @@
         <p class="glass-tile-card__text _txt-s">Заполните простую форму и наш специалист свяжется с вами, чтобы
           ответить на все
           вопросы и определить время встречи</p>
-        <button class="glass-tile-card__button button" type="button"  data-popup-open="consult">
+        <button class="glass-tile-card__button button" type="button"  data-popup-form-open="consult">
   оставить заявку
 </button>
       </div>
@@ -587,8 +592,10 @@
   <use xlink:href="./icons/sprite/sprite.svg#quote-start"></use>
 </svg>
 
-        Мы мастерская которая работает всей командой над решением задач одного человека — вас
+        Мы мастерская которая работает
 
+        
+        <span class="quote__title_accent"> всей командой над решением задач одного человека — вас</span>
         
 
         <svg class="quote__icon quote__icon_end icon-quote-end icon" >
@@ -663,7 +670,7 @@
     </div>
   </div>
 </section>
-      <section class="about">
+      <section class="about" data-scroll-to="community">
   <div class="about__container _container">
     <div class="about__descritpion">
       <h2 class="about__title _h1">Стань частью <span class="about__title-accent _txt-accent-blue">чего-то
@@ -832,7 +839,7 @@
     <img class="faq__interactive-icon" src="images/background-body/Rectangle 109.png" alt="">
   </div>
 </section>
-      <section class="contact">
+      <section class="contact" data-scroll-to="сontacts">
   <div class="contact__container _container">
 
     <div class="contact__box">
@@ -864,7 +871,7 @@
         <div class="contact__form-footer">
           <p class="contact__policy _txt-s">Нажимая кнопку "Отправить", вы соглашаетесь с <a href="#" target="_blank"
               rel="noopener noreferrer">Политикой конфиденциальности</a></p>
-          <button class="contact__form-button button" type="submit"  >
+          <button class="contact__form-button _loader-mini button" type="submit"  data-form-loader-js>
   ОТправить
 </button>
         </div>
@@ -909,7 +916,7 @@
     <button class="popup-card__close _icon-close _popup-close" data-popup-close="card"></button>
     <div class="popup-card__body">
       <div class="popup-card__info">
-        <h2 class="popup-card__title _h4">Протез голени</h2>
+        <h2 class="popup-card__title _h3">Протез голени</h2>
         <p class="popup-card__text _txt-m">Протезирование голени – один из самых распространенных видов протезирования,
           который характеризуется высокими
           показателями в дальнейшей реабилитации. Все подбирается индивидуально под каждого человека, исходя из его
@@ -943,7 +950,7 @@
 
         </div>
 
-        <button class="popup-card__button button" type="button"  data-popup-open="consult" data-popup-close="card">
+        <button class="popup-card__button button" type="button"  data-popup-form-open="consult" data-popup-close="card">
   Записаться на консультацию
 </button>
       </div>
@@ -1006,22 +1013,22 @@
 
   </div>
 </section>
-      <section class="popup-consult _popup-wrapper" data-popup="consult" data-popup-close="consult">
+      <section class="popup-consult _popup-wrapper" data-popup-form="consult" data-popup-form-close="consult">
   <div class="popup-consult__container _popup-content">
-    <button class="popup-consult__close _icon-close _popup-close" data-popup-close="consult"></button>
-    <form class="popup-consult__form">
+    <button class="popup-consult__close _icon-close _popup-close" data-popup-form-close="consult"></button>
+    <form class="popup-consult__form" data-form-js>
       <legend class="popup-consult__form-title _h4">Запись на бесплатную консультацию</legend>
-      <label class="_lable _icon-warning">
+      <label class="_lable _icon-warning" data-form-input-js>
         <span class="_lable-title _txt-s">Представьтесь</span>
         <input class="_input _txt-m" type="tel" name="name" required>
-        <span class="_input-error _txt-s">Обязательное поле</span>
+        <span class="_input-error _txt-s" data-form-error-js>Обязательное поле</span>
       </label>
-      <label class="_lable _icon-warning">
+      <label class="_lable _icon-warning" data-form-input-js>
         <span class="_lable-title _txt-s">Контактный телефон</span>
         <input class="_input _txt-m" type="tel" name="phone" required>
-        <span class="_input-error _txt-s">Обязательное поле</span>
+        <span class="_input-error _txt-s" data-form-error-js>Обязательное поле</span>
       </label>
-      <button class="popup-consult__form-button button" type="submit"  >
+      <button class="popup-consult__form-button _loader-mini button" type="submit"  data-form-loader-js>
   Записаться
 </button>
       <p class="popup-consult__policy _txt-s">Нажимая кнопку "Записаться", вы соглашаетесь с <a href="#" target="_blank"
@@ -1049,6 +1056,16 @@
   <div class="popup-image__loader _loader"></div>
   <h3 class="popup-image__error _h2">Не смогли загрузить изображение :(</h3>
 </section>
+      <section class="popup-done _popup-wrapper" data-popup="done" data-popup-close="done">
+  <div class="popup-done__container _popup-content">
+    <h2 class="popup-done__title _h4">Спасибо за заявку!</h2>
+    <p class="popup-done__text _txt-m">Скоро мы получим ваше обращение и обязательно свяжемся с вами для консультации
+    </p>
+    <button class="popup-done__button button" type="submit"  data-popup-close="done">
+  Ок, жду!
+</button>
+  </div>
+</section>
     </div>
   </main>
   <footer class="footer">
@@ -1074,19 +1091,19 @@
     <nav class="footer__nav">
       <ul class="footer__list">
         <li class="footer__item">
-          <a class="footer__link _txt-s" href="#">О компании</a>
+          <a class="footer__link _txt-s" href="#" data-scroll-from="company">О компании</a>
         </li>
         <li class="footer__item">
-          <a class="footer__link _txt-s" href="#">Виды протезов</a>
+          <a class="footer__link _txt-s" href="#" data-scroll-from="prostheses">Виды протезов</a>
         </li>
         <li class="footer__item">
-          <a class="footer__link _txt-s" href="#">изготовление</a>
+          <a class="footer__link _txt-s" href="#" data-scroll-from="production">изготовление</a>
         </li>
         <li class="footer__item">
-          <a class="footer__link _txt-s" href="#">сообщество</a>
+          <a class="footer__link _txt-s" href="#" data-scroll-from="community">сообщество</a>
         </li>
         <li class="footer__item">
-          <a class="footer__link _txt-s" href="#">Контакты</a>
+          <a class="footer__link _txt-s" href="#" data-scroll-from="сontacts">Контакты</a>
         </li>
       </ul>
     </nav>
@@ -1094,6 +1111,6 @@
 </footer>
 </body>
 
-<script src="./js/app.build.js?_v=20220520134038"></script>
+<script src="./js/app.build.js?_v=20220523160932"></script>
 
 </html>
