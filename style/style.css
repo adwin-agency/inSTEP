@@ -1823,10 +1823,8 @@ main {
   white-space: nowrap;
 }
 
-.no-webp .consultation{
-  background-image: url("../images/consultation/background.jpg"); }
-
 .consultation {
+  background-image: url("../images/consultation/background.jpg");
   background-position: center right;
   background-repeat: no-repeat;
   background-size: cover;
@@ -7205,5 +7203,3 @@ body {
     opacity: 0.6;
   }
 }
-
-.webp .consultation{ background-image: url(../images/consultation/background.webp); }
