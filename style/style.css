@@ -589,7 +589,8 @@ main {
 ._container {
   max-width: 1872px;
   width: 100%;
-  padding: 0px 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   margin: 0 auto;
 }
 
@@ -4874,7 +4875,8 @@ body {
   }
 
   ._container {
-    padding: 0px 10px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   ._h1 {
