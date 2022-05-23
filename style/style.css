@@ -594,6 +594,14 @@ main {
   margin: 0 auto;
 }
 
+._container-max {
+  max-width: 2561px;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0 auto;
+}
+
 ._overflow-x {
   overflow-x: hidden;
   overflow-y: auto;
@@ -3437,7 +3445,7 @@ body {
 
   .wave__title {
     text-align: right;
-    max-width: 260px;
+    max-width: 300px;
   }
 
   .team__footer {
@@ -3530,6 +3538,13 @@ body {
 
   .videos-card {
     height: 330px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .wave__icon {
+    left: -3%;
+    width: 105%;
   }
 }
 
@@ -4879,6 +4894,11 @@ body {
   }
 
   ._container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  ._container-max {
     padding-left: 10px;
     padding-right: 10px;
   }
