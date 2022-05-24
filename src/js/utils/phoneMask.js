@@ -1,10 +1,10 @@
-function maskPhone(element, masked = "+7 (___) ___-__-__") {
+export default function maskPhone(element, masked = "+7 (___) ___-__-__") {
   function mask(event) {
     const { keyCode } = event;
     const template = masked;
     const def = template.replace(/\D/g, "");
     const val = this.value.replace(/\D/g, "");
-    console.log(template);
+
     let i = 0;
     let newValue = template.replace(/[_\d]/g, (a) =>
       i < val.length ? val.charAt(i++) || def.charAt(i) : a

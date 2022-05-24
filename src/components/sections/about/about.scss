@@ -119,6 +119,9 @@
   &__image {
     @include adaptive-value("width", 969, 452, $xxs);
     @include adaptive-value("height", 969, 452, $xxs);
+    @media (min-width: ($xs+px)) {
+      object-fit: contain;
+    }
   }
 
   &__image-icon {
@@ -156,10 +159,13 @@
     max-width: 760px;
     background-color: $color-white;
     border-radius: 30px;
-    padding: 18px;
     justify-self: end;
+    @include adaptive-value("padding", 18, 8, $xxs);
     @include adaptive-value("margin-top", 465, 273, $xxs);
     @include adaptive-value("padding-right", 108, 30, $xxs);
+    @media (max-width: ($xs+px)) {
+      padding-left: 0;
+    }
   }
 
   // .about__slider

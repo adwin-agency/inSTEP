@@ -5,18 +5,31 @@ export default class Burger {
     this.burger = burger;
     this.menu = menu;
     this.listener();
+    this.closeToLinkClick(); // Хардкод
   }
 
   toggle() {
     this.menu.classList.toggle("_active");
     this.burger.classList.toggle("_active");
-    document.body.classList.toggle("_fixed");
+    document.body.classList.add("_fixed");
+    if (document.body.classList.contains("_fixed")) {
+      document.body.classList.remove("_fixed");
+    }
+  }
 
-    // if (this.menu.classList.contains("_active")) {
-    //   document.body.style.paddingRight = `${determineScrollWidth()}px`;
-    // } else {
-    //   document.body.style.paddingRight = "";
-    // }
+  // Хардкод
+  closeToLinkClick() {
+    const links = this.menu.querySelectorAll(".header__link");
+    // eslint-disable-next-line no-restricted-syntax
+    for (const link of links) {
+      link.addEventListener("click", () => {
+        this.menu.classList.remove("_active");
+        this.burger.classList.remove("_active");
+        if (document.body.classList.contains("_fixed")) {
+          document.body.classList.remove("_fixed");
+        }
+      });
+    }
   }
 
   listener() {

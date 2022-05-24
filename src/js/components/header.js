@@ -20,7 +20,9 @@ export default class Header {
 
     this.isScrolling();
 
-    if (!document.body.classList.contains("_fixed")) {
+    // Хардкод - переделать (меню не используется в этом классе, сделано это чтобы исключить "уезжание" хедера вместе с открытым меню при скролле)
+
+    if (!document.querySelector("._menu").classList.contains("_active")) {
       // eslint-disable-next-line no-unused-expressions
       this.oldScrollTopPosition > scrollTopPosition ? this.show() : this.hide();
       this.oldScrollTopPosition = scrollTopPosition;

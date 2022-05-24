@@ -1,3 +1,5 @@
+import maskPhone from "../utils/phoneMask.js";
+
 const FORM_CONST = {
   tooShort: "Недостаточно символов",
   valueMissing: "Обязательное поле",
@@ -13,13 +15,26 @@ const FORM_CONST = {
 
 export default class Form {
   constructor(options) {
-    const { form } = options;
-    this.form = form;
+    const { forms, popup, donePopup } = options;
+    this.forms = forms;
 
-    this.submitButton = this.form.querySelector("button");
+    this.popup = popup; // хардкод (см onSuccess)
+    this.donePopup = donePopup; // хардкод (см onSuccess)
+
     this.formIsValid = false;
-    this.listener();
+    this.formHandler();
   }
+
+  formHandler = () => {
+    this.forms.forEach((form) => {
+      // Ставим слушатели
+      const button = form.querySelector("button");
+      this._listener(form, button);
+      // Ставим маску на телефон
+      const tel = form.querySelector('input[type="tel"]');
+      maskPhone(tel);
+    });
+  };
 
   eventHandler = (event) => {
     const { target } = event;
@@ -27,7 +42,6 @@ export default class Form {
   };
   checkInputValidity = (input) => {
     const { tooShort, valueMissing, typeMismatch, notChecked } = FORM_CONST;
-
     switch (true) {
       case input.validity.tooShort:
         this.setInputError(input, tooShort);
@@ -41,11 +55,15 @@ export default class Form {
       case !input.checked && input.type === "checkbox":
         this.setInputError(input, notChecked);
         break;
+      case input.value.length < 18 && input.type === "tel":
+        this.setInputError(input, tooShort);
+        break;
       default:
         this.removeInputError(input);
         break;
     }
   };
+
   setInputError(input, text) {
     const { dataWrapper, dataErrorText } = FORM_CONST;
 
@@ -60,6 +78,13 @@ export default class Form {
       this.addErrorClass(input);
     }
   }
+  removeInputError(input) {
+    const { dataWrapper } = FORM_CONST;
+    const wrapper = input.closest(dataWrapper);
+    if (wrapper) {
+      this.removeErrorClass(wrapper);
+    }
+  }
 
   addErrorClass(el) {
     const { mainErrorClass } = FORM_CONST;
@@ -71,36 +96,36 @@ export default class Form {
     el.classList.remove(mainErrorClass);
   }
 
-  removeInputError(input) {
-    const { dataWrapper } = FORM_CONST;
-    const wrapper = input.closest(dataWrapper);
-    if (wrapper) {
-      this.removeErrorClass(wrapper);
-    }
-  }
-
   serializeForm(formNode) {
     const formData = new FormData(formNode);
     return formData;
   }
 
-  toggleLoader() {
+  toggleLoader(formNode) {
     const { dataLoader, loaderClass } = FORM_CONST;
-    const loader = this.form.querySelector(dataLoader);
+
+    const loader = formNode.querySelector(dataLoader);
+    const submitButton = formNode.querySelector("button");
 
     loader.classList.toggle(loaderClass);
     loader.classList.contains(loaderClass)
-      ? (this.submitButton.disabled = true)
-      : (this.submitButton.disabled = false);
+      ? (submitButton.disabled = true)
+      : (submitButton.disabled = false);
   }
 
   metrics() {}
 
   onSuccess(formNode) {
     this.metrics();
+    formNode.reset();
+
+    this.popup.classList.remove("_open"); // Хардкод
+    this.donePopup.classList.add("_open"); // Хардкод
   }
 
-  onError(error) {
+  onError(formNode, error) {
+    const button = formNode.querySelector("button");
+    button.setAttribute("data-button-error", "Ошибка отправки");
     return error?.message ? console.error(error.message) : null;
   }
 
@@ -123,14 +148,14 @@ export default class Form {
 
     const data = this.serializeForm(event.target);
 
-    this.toggleLoader();
+    this.toggleLoader(event.target);
     const { status, error } = await this.sendData(data);
-    this.toggleLoader();
+    this.toggleLoader(event.target);
 
-    if (status === 200) {
+    if (status === 404) {
       this.onSuccess(event.target);
     } else {
-      this.onError(error);
+      this.onError(event.target, error);
     }
   }
 
@@ -138,9 +163,12 @@ export default class Form {
     const { target } = event;
     const formNode = target.form;
     const { elements } = formNode;
+    const button = formNode.querySelector("button");
 
     this.formIsValid = formNode.checkValidity();
-    formNode.querySelector("button").disabled = !this.formIsValid;
+    button.disabled = !this.formIsValid;
+
+    button.removeAttribute("data-button-error");
 
     if (!this.formIsValid) {
       Array.from(elements).forEach((input) => {
@@ -149,12 +177,12 @@ export default class Form {
     }
   };
 
-  listener() {
-    this.form.addEventListener("input", (event) => {
+  _listener(form, submitButton) {
+    form.addEventListener("input", (event) => {
       this.checkFormValidity(event);
       this.eventHandler(event);
     });
-    this.submitButton.addEventListener("click", this.checkFormValidity);
-    this.form.addEventListener("submit", this.handleFormSubmit.bind(this));
+    submitButton.addEventListener("click", this.checkFormValidity);
+    form.addEventListener("submit", this.handleFormSubmit.bind(this));
   }
 }

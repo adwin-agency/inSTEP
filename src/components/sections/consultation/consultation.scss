@@ -4,7 +4,7 @@
   background-position: center right;
   background-repeat: no-repeat;
   background-size: cover;
-  @media (max-width: ($maxWidth+px)) {
+  @media (min-width: ($container-xl+1px)) {
     max-width: 1920px;
   }
   &__container {
@@ -32,7 +32,7 @@
   &__wave-icon {
     position: absolute;
     top: 32%;
-    right: 0;
+    right: -25px;
     max-height: 866px;
     max-width: 80px;
     width: 100%;
@@ -65,6 +65,9 @@
 
   &__text {
     @include adaptive-value("margin-top", 35, 22, $xxs);
+    font-style: normal;
+    font-weight: 300;
+    line-height: 160%;
     @media (max-width: ($s+px)) {
       text-align: center;
     }

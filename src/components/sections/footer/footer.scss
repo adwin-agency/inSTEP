@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @include adaptive-value("gap", 77, 40, $xxs);
+    @include adaptive-value("gap", 77, 40, $m);
     @media (max-width: ($m+px)) {
       flex-wrap: wrap;
     }
@@ -72,9 +72,14 @@
     display: flex;
     flex-wrap: wrap;
     color: $color-white;
+
     @include adaptive-value("gap", 36, 25, $xxs);
     @media (max-width: ($xs+px)) {
       flex-direction: column;
+    }
+    @media (max-width: ($m+px)) {
+      // max-width: 540px;
+      // justify-content: flex-end;
     }
   }
 

@@ -13,10 +13,6 @@ export default class Popups {
     this.closeListeners(this.closeEvent);
   }
 
-  clickedAttributes(button) {
-    this.buttonAttribute = button.dataset;
-  }
-
   findOpenPopup(target) {
     const findPopup = this.popups.find(
       (popup) =>
@@ -27,7 +23,6 @@ export default class Popups {
   }
 
   findClosePopup(target) {
-
     const findPopup = this.popups.find(
       (popup) =>
         popup.getAttribute(this.popupsAttribute) ===
@@ -40,8 +35,9 @@ export default class Popups {
     const { target } = event;
     const popup = this.findOpenPopup(target);
     if (popup) {
-      this.clickedAttributes(target);
-      this.open(popup);
+      setTimeout(() => {
+        this.open(popup);
+      }, 0);
     }
   }
 
@@ -50,7 +46,6 @@ export default class Popups {
 
     const popup = this.findClosePopup(target);
     if (popup) {
-
       this.close(popup);
     }
   }
@@ -62,9 +57,11 @@ export default class Popups {
   }
 
   open(element) {
+    // setTimeout(() => {
     document.body.style.paddingRight = `${determineScrollWidth()}px`;
     element.classList.add("_open");
     document.body.classList.add("_fixed");
+    // }, 0);
   }
 
   openListeners(func) {

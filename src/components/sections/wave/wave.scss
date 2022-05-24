@@ -1,7 +1,7 @@
 .wave {
   background-color: $color-main-blue;
   position: relative;
-  @media (max-width: ($maxWidth+px)) {
+  @media (min-width: ($container-xl+1px)) {
     max-width: 1920px;
   }
   // .wave__icon
@@ -14,6 +14,10 @@
     transform: translateY(-50%);
     @media (max-width: ($xs+px)) {
       transform: translateY(-50%) scale(2);
+    }
+    @media (min-width: ($maxWidth+px)) {
+      left: -3%;
+      width: 105%;
     }
   }
 
@@ -54,6 +58,7 @@
     max-width: 484px;
     @media (min-width: ($m+px)) {
       text-align: right;
+      max-width: 300px;
     }
   }
 

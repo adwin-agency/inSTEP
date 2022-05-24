@@ -17,7 +17,7 @@
     color: $color-white;
     transition: color $transitionLight;
     &::before {
-      @include adaptive-value("font-size", 50, 30, $xxs);
+      @include adaptive-value("font-size", 50, 37, $xxs);
       color: inherit;
     }
     @media (any-hover: hover) {

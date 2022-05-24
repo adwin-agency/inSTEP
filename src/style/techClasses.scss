@@ -301,10 +301,23 @@
 ._container {
   max-width: ($container-l + px);
   width: 100%;
-  padding: 0px 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   margin: 0 auto;
   @media (max-width: ($xxs+px)) {
-    padding: 0px 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+._container-max {
+  max-width: ($container-xl + px);
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0 auto;
+  @media (max-width: ($xxs+px)) {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 ._overflow-x {
@@ -367,6 +380,7 @@ body._fixed {
   @include adaptive-value("font-size", 40, 28, $xxs);
 }
 ._h3 {
+  @include adaptive-value("font-size", 33, 20, $xxs);
 }
 ._h4 {
   @include adaptive-value("font-size", 22, 18, $xxs);

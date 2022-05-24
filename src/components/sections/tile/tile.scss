@@ -38,14 +38,22 @@
 .tile-card {
   // .tile-card_purple
   grid-column-start: span 2;
-  @include adaptive-value("padding-left", 64, 20, $xxs);
-  @include adaptive-value("padding-right", 50, 20, $xxs);
-  @include adaptive-value("padding-bottom", 47, 30, $xxs);
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+
   padding-top: 26px;
   border-radius: 10px;
   cursor: pointer;
   transition: $transitionNormal;
+
+  @include adaptive-value("padding-left", 64, 20, $xxs);
+  @include adaptive-value("padding-right", 50, 20, $xxs);
+  @include adaptive-value("padding-bottom", 47, 30, $xxs);
   @media (any-hover: hover) {
+    .tile-card__btn-more {
+      display: none;
+    }
     &:hover {
       transform: scale(1.01);
       box-shadow: -2px 2px 5px rgb(0 0 0 / 20%);
@@ -120,7 +128,7 @@
 
   &__icon {
     display: block;
-    text-align: end;
+    margin-left: auto;
     pointer-events: none;
     @include adaptive-value("font-size", 80, 55, $xxs);
   }
@@ -149,5 +157,19 @@
     &_long {
       max-width: 547px;
     }
+  }
+
+  // .tile-card__btn-more
+  &__btn-more {
+    display: block;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+    color: $color-main-blue;
+    pointer-events: none;
+    margin-top: auto;
+    padding-top: 10px;
+    text-transform: uppercase;
   }
 }

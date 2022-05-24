@@ -16,7 +16,22 @@
   @include adaptive-value("padding-top", 25, 20, $xxs);
   @include adaptive-value("padding-bottom", 25, 20, $xxs);
   transition: 0.1s;
-
+  &::before {
+    content: attr(data-button-error);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: translateY(102%);
+    text-align: center;
+    color: #f68c5d;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 140%;
+    transition: 0.3s;
+    text-transform: lowercase;
+  }
   &:active {
     transform: scale(0.98);
     box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);

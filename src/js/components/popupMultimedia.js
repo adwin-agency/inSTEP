@@ -36,11 +36,11 @@ export default class PopupMultimedia extends Popups {
     } else {
       console.error(consoleAttributeError);
       console.dir(target);
-
       const popup = this.findOpenPopup(target);
-
       if (popup) {
-        this.close(popup);
+        setTimeout(() => {
+          this.close(popup);
+        }, 1);
       }
     }
   }
@@ -95,14 +95,14 @@ export default class PopupMultimedia extends Popups {
 
     video.addEventListener("loadeddata", () => {
       if (video.readyState >= 2) {
-        this.addError(this.popup, videoOnload);
+        this.addClass(this.popup, videoOnload);
         video.play();
       }
     });
 
     // eslint-disable-next-line no-param-reassign
     video.onerror = () => {
-      this.addError(this.popup, videoError);
+      this.addClass(this.popup, videoError);
       console.error(consoleVideoError);
     };
   }
@@ -113,12 +113,12 @@ export default class PopupMultimedia extends Popups {
 
     // eslint-disable-next-line no-param-reassign
     image.onload = () => {
-      this.addError(this.popup, imageOnload);
+      this.addClass(this.popup, imageOnload);
     };
 
     // eslint-disable-next-line no-param-reassign
     image.onerror = () => {
-      this.addError(this.popup, imageError);
+      this.addClass(this.popup, imageError);
       console.error(consoleImageError);
     };
   }
@@ -127,7 +127,7 @@ export default class PopupMultimedia extends Popups {
     const { imageOnload, imageError, videoError, videoOnload } =
       POPUP_MULTIMEDIA_CLASSES;
 
-    this.removeError(
+    this.removeClass(
       this.popup,
       imageOnload,
       imageError,
@@ -136,11 +136,11 @@ export default class PopupMultimedia extends Popups {
     );
   }
 
-  addError(element, ...error) {
-    element.classList.add(...error);
+  addClass(element, ...classes) {
+    element.classList.add(...classes);
   }
 
-  removeError(element, ...error) {
-    element.classList.remove(...error);
+  removeClass(element, ...classes) {
+    element.classList.remove(...classes);
   }
 }

@@ -17,11 +17,18 @@ import HEADER_CONSTANT from "./constants/headerConst.js";
 import Form from "./components/form.js";
 import FORM_CONSTANT from "./constants/formConst.js";
 
+import PopupForm from "./components/popupForm.js";
+import POPUP_FORM_CONSTANT from "./constants/popupFormConst.js";
+
+import ScrollTo from "./components/scrollTo.js";
+
 const header = new Header(HEADER_CONSTANT);
 const burger = new Burger(BURGER_CONSTANT);
 const popup = new Popups(POPUP_CONSTANT);
-const form = new Form(FORM_CONSTANT)
+const scrollTo = new ScrollTo();
 const popupMultimedia = new PopupMultimedia(POPUP_MULTIMEDIA_CONSTANT);
+const popupForm = new PopupForm(POPUP_FORM_CONSTANT);
+const form = new Form(FORM_CONSTANT);
 
 const faqAcc = new Accordion(".faq__body", {
   onlyChildNodes: false,

@@ -52,8 +52,7 @@
   // .team__main-name
 
   &__main-name {
-    margin-top: 45px;
-
+    @include adaptive-value("margin-top", 45, 25, $xxs, $s);
     max-width: 340px;
     @media (min-width: ($xs+px)) {
       margin-left: auto;

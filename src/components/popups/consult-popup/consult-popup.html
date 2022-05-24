@@ -1,17 +1,17 @@
-<section class="popup-consult _popup-wrapper" data-popup="consult" data-popup-close="consult">
+<section class="popup-consult _popup-wrapper" data-popup-form="consult" data-popup-form-close="consult">
   <div class="popup-consult__container _popup-content">
-    <button class="popup-consult__close _icon-close _popup-close" data-popup-close="consult"></button>
-    <form class="popup-consult__form">
+    <button class="popup-consult__close _icon-close _popup-close" data-popup-form-close="consult"></button>
+    <form class="popup-consult__form" data-form-js>
       <legend class="popup-consult__form-title _h4">Запись на бесплатную консультацию</legend>
-      <label class="_lable _icon-warning">
+      <label class="_lable _icon-warning" data-form-input-js>
         <span class="_lable-title _txt-s">Представьтесь</span>
-        <input class="_input _txt-m" type="tel" name="name" required>
-        <span class="_input-error _txt-s">Обязательное поле</span>
+        <input class="_input _txt-m" type="text" name="name" required>
+        <span class="_input-error _txt-s" data-form-error-js>Обязательное поле</span>
       </label>
-      <label class="_lable _icon-warning">
+      <label class="_lable _icon-warning" data-form-input-js>
         <span class="_lable-title _txt-s">Контактный телефон</span>
-        <input class="_input _txt-m" type="tel" name="phone" required>
-        <span class="_input-error _txt-s">Обязательное поле</span>
+        <input class="_input _txt-m" type="tel" name="phone" minlength="16" required>
+        <span class="_input-error _txt-s" data-form-error-js>Обязательное поле</span>
       </label>
       @@include('../../UI/button/button.html', {
       class: 'popup-consult__form-button _loader-mini',

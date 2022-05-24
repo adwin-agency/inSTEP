@@ -45,7 +45,7 @@ const fonts = gulp.series(otfToTtf, ttfToWoff, fontGenerator);
 
 const tasks = gulp.series(
   fonts,
-  gulp.parallel(copy, html, style, js, images, sprite, svg)
+  gulp.parallel(copy, html, js, images, sprite, svg, style)
 );
 
 // Построение сценария выполнения задач
