@@ -1591,6 +1591,7 @@ main {
           box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
   border-radius: 40px;
   padding: 14px 30px;
+  cursor: auto;
 }
 
 .pay-info-plate__icon-mir {
@@ -2631,11 +2632,6 @@ main {
   z-index: -1;
 }
 
-.about__image {
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-
 .about__image-icon {
   position: absolute;
 }
@@ -2665,7 +2661,6 @@ main {
   max-width: 760px;
   background-color: #ffffff;
   border-radius: 30px;
-  padding: 18px;
   -ms-grid-column-align: end;
       justify-self: end;
 }
@@ -3110,6 +3105,15 @@ main {
 .header__phone-icon {
   height: 100%;
   width: 34px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   z-index: 500;
 }
 
@@ -3234,6 +3238,11 @@ body {
 
   .glass-tile-card__button {
     max-width: 240px;
+  }
+
+  .about__image {
+    -o-object-fit: contain;
+       object-fit: contain;
   }
 
   .contact__form-button {
@@ -4090,6 +4099,10 @@ body {
   }
 
   .about__slider-box {
+    padding: 18px;
+  }
+
+  .about__slider-box {
     margin-top: 465px;
   }
 
@@ -4246,7 +4259,7 @@ body {
   }
 }
 
-@media (max-width: 1920px) {
+@media (min-width: 2562px) {
   .wave {
     max-width: 1920px;
   }
@@ -4578,6 +4591,10 @@ body {
             flex-direction: column;
   }
 
+  .pay-info-plate__icon-box {
+    margin-top: 14px;
+  }
+
   .advantages-card {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -4733,6 +4750,10 @@ body {
         -ms-flex-align: center;
             align-items: center;
   }
+
+  .header__phone-footnote {
+    text-align: center;
+  }
 }
 
 @media (max-width: 520.5px) {
@@ -4862,6 +4883,10 @@ body {
             transform: translate(0%, 100%);
   }
 
+  .about__slider-box {
+    padding-left: 0;
+  }
+
   .contact__form-footer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -4976,7 +5001,7 @@ body {
   }
 
   .social-box__icon::before {
-    font-size: 30px;
+    font-size: 37px;
   }
 
   .popup-card__container {
@@ -5360,6 +5385,10 @@ body {
 
   .about__image-icon._icon-Love-Marker {
     font-size: 90px;
+  }
+
+  .about__slider-box {
+    padding: 8px;
   }
 
   .about__slider-box {
@@ -5803,7 +5832,7 @@ body {
 
   .social-box__icon::before {
     font-size: calc(
-      30px + 20 * ((
+      37px + 13 * ((
               100vw - 375.5px
             ) / 1544.5)
     );
@@ -6516,6 +6545,14 @@ body {
   .about__image-icon._icon-Love-Marker {
     font-size: calc(
       90px + 21 * ((
+              100vw - 375.5px
+            ) / 1544.5)
+    );
+  }
+
+  .about__slider-box {
+    padding: calc(
+      8px + 10 * ((
               100vw - 375.5px
             ) / 1544.5)
     );
