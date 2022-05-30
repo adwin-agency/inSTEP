@@ -2055,6 +2055,8 @@ main {
 .quote__icon_end {
   bottom: -11%;
   right: -2%;
+  left: unset !important;
+  top: unset !important;
 }
 
 .team__image-box {
@@ -2548,6 +2550,7 @@ main {
 }
 
 .about__container {
+  pointer-events: auto !important;
   position: relative;
   display: -ms-grid;
   display: grid;
@@ -2633,24 +2636,20 @@ main {
 }
 
 .about__image-icon {
-  position: absolute;
+  position: absolute !important;
 }
 
 .about__image-icon._icon-Love-Marker {
   right: 0;
-  top: 50%;
-  -webkit-transform: translate(25%, -50%);
-      -ms-transform: translate(25%, -50%);
-          transform: translate(25%, -50%);
+  top: 31% !important;
+  left: unset !important;
   color: #5005f2;
 }
 
 .about__image-icon._icon-Hashtag-Marker {
-  right: 0;
-  top: 50%;
-  -webkit-transform: translate(-65%, 100%);
-      -ms-transform: translate(-65%, 100%);
-          transform: translate(-65%, 100%);
+  right: 7%;
+  top: 58% !important;
+  left: unset !important;
   font-size: 87px;
   color: #ffffff;
 }
@@ -4872,15 +4871,12 @@ body {
   }
 
   .about__image-icon._icon-Love-Marker {
-    -webkit-transform: translate(20%, -145%);
-        -ms-transform: translate(20%, -145%);
-            transform: translate(20%, -145%);
+    top: 21% !important;
   }
 
   .about__image-icon._icon-Hashtag-Marker {
-    -webkit-transform: translate(0%, 100%);
-        -ms-transform: translate(0%, 100%);
-            transform: translate(0%, 100%);
+    right: 2%;
+    top: 59% !important;
   }
 
   .about__slider-box {
