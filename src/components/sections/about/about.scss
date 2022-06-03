@@ -4,6 +4,7 @@
   // .about__container
 
   &__container {
+    pointer-events: auto !important;
     position: relative;
     display: grid;
     @include adaptive-value("gap", 75, 20, $xs);
@@ -125,29 +126,31 @@
   }
 
   &__image-icon {
-    position: absolute;
+    position: absolute !important;
 
     &._icon-Love-Marker {
       right: 0;
-      top: 50%;
-      transform: translate(25%, -50%);
+      top: 31% !important;
+      left: unset !important;
       @include adaptive-value("font-size", 111, 90, $xxs);
       color: $color-purple;
       @media (max-width: ($xs+px)) {
-        transform: translate(20%, -145%);
+        top: 21% !important;
       }
     }
     &._icon-Hashtag-Marker {
-      right: 0;
-      top: 50%;
-      transform: translate(-65%, 100%);
+      right: 7%;
+      top: 58% !important;
+      left: unset !important;
+      // transform: translate(-65%, 100%);
       font-size: 87px;
       color: $color-white;
       @media (min-width: ($m+px)) {
         z-index: -1;
       }
       @media (max-width: ($xs+px)) {
-        transform: translate(0%, 100%);
+        right: 2%;
+        top: 59% !important;
       }
     }
   }

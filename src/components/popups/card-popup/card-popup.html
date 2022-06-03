@@ -1,106 +1,26 @@
-<section class="popup-card _popup-wrapper" data-popup="card" data-popup-close="card">
+<section class="popup-card _popup-wrapper" data-popup-card="card" data-popup-card-close="card">
 
   <div class="popup-card__container _popup-content">
-    <button class="popup-card__close _icon-close _popup-close" data-popup-close="card"></button>
+    <button class="popup-card__close _icon-close _popup-close" data-popup-card-close="card"></button>
     <div class="popup-card__body">
-      <div class="popup-card__info">
-        <h2 class="popup-card__title _h3">Протез голени</h2>
-        <p class="popup-card__text _txt-m">Протезирование голени – один из самых распространенных видов протезирования,
-          который характеризуется высокими
-          показателями в дальнейшей реабилитации. Все подбирается индивидуально под каждого человека, исходя из его
-          физических
-          данных и социальных потребностей. ­</p>
-        <div class="popup-card__specifications">
-
-          <div class="popup-card__specifications-row">
-            <p class="popup-card__specifications-name _txt-s">Cостоит из:</p>
-            <div class="popup-card__specifications-box">
-              <p class="popup-card__specifications-value _txt-s">приемной гильзы, модуля голени и стопы</p>
-            </div>
-          </div>
-
-          <div class="popup-card__specifications-row">
-            <p class="popup-card__specifications-name _txt-s">Материалы:</p>
-            <div class="popup-card__specifications-box">
-              <p class="popup-card__specifications-value _txt-s">гипоаллергенный пластик, лёгкий сплав аллюминия</p>
-            </div>
-          </div>
-
-          <div class="popup-card__specifications-row">
-            <p class="popup-card__specifications-name _txt-s">Гарантия:</p>
-            <div class="popup-card__specifications-box">
-              <p class="popup-card__specifications-value _txt-s">24 месяца. Распространяется на комплектующие и на
-                изделие
-                в целом (в случае изменения объемных параметров замена гильзы
-                бесплатно)</p>
-            </div>
-          </div>
-
-        </div>
-
-        @@include('../../UI/button/button.html', {
-        class: 'popup-card__button',
-        text: 'Записаться на консультацию',
-        type: 'button',
-        attribute: 'data-popup-form-open="consult" data-popup-close="card"'
-        })
+      <div class="popup-card__info" data-card-info>
+        <button class="popup-card__button button" type="button" data-popup-form-open="consult"
+          data-popup-card-close="card">
+          Записаться на консультацию
+        </button>
       </div>
-
       <div class="popup-card__interactive">
-        <div class="popup-card__main-slider _swiper-settings _swiper-settings_auto-width">
-          <div class="swiper-wrapper">
-            <div class="popup-card__main-slide swiper-slide">
-              <img src="@img/popup-card/main_1.jpg" alt="slide">
-            </div>
-            <div class="popup-card__main-slide swiper-slide _icon-play">
-              <!-- <img src="@img/popup-card/main_2.jpg" alt="slide"> -->
-              <video class="popup-card__main-slide-content" data-src="../files/test-video.mp4"
-                poster="@img/popup-card/main_2.jpg" autoplay muted></video>
-            </div>
-            <div class="popup-card__main-slide swiper-slide">
-              <img class="popup-card__main-slide-content" src="@img/popup-card/main_3.jpg" alt="slide">
-            </div>
-            <div class="popup-card__main-slide swiper-slide">
-              <img class="popup-card__main-slide-content" src="@img/popup-card/main_1.jpg" alt="slide">
-            </div>
-            <div class="popup-card__main-slide swiper-slide">
-              <img class="popup-card__main-slide-content" src="@img/popup-card/main_2.jpg" alt="slide">
-            </div>
-            <div class="popup-card__main-slide swiper-slide">
-              <img class="popup-card__main-slide-content" src="@img/popup-card/main_3.jpg" alt="slide">
-            </div>
-          </div>
+        <div class="popup-card__main-slider _swiper-settings">
+          <div class="swiper-wrapper" data-card-main-slide></div>
           <div class="popup-card__slider-controls _slider-controls">
             <button class="popup-card__slider-btn-l _slider-button _slider-button_left _icon-arrow-left"></button>
             <button class="popup-card__slider-btn-r _slider-button _slider-button_right _icon-arrow-right"></button>
           </div>
         </div>
-        <div class="popup-card__duplicate-slider _swiper-settings _swiper-settings_auto-width">
-          <div class="swiper-wrapper">
-            <div class="popup-card__duplicate-slide swiper-slide">
-              <img class="popup-card__duplicate-slide-content" src="@img/popup-card/image_3.jpg" alt="duplicate-slide">
-            </div>
-            <div class="popup-card__duplicate-slide swiper-slide _icon-play">
-              <!-- <img class="popup-card__duplicate-slide-content" src="@img/popup-card/image_4.jpg" alt="duplicate-slide"> -->
-              <video class="popup-card__duplicate-slide-content" data-src="../files/test-video.mp4"
-                poster="@img/popup-card/main_2.jpg" autoplay muted></video>
-            </div>
-            <div class="popup-card__duplicate-slide swiper-slide">
-              <img class="popup-card__duplicate-slide-content" src="@img/popup-card/image_5.jpg" alt="duplicate-slide">
-            </div>
-            <div class="popup-card__duplicate-slide swiper-slide">
-              <img class="popup-card__duplicate-slide-content" src="@img/popup-card/image_6.jpg" alt="duplicate-slide">
-            </div>
-            <div class="popup-card__duplicate-slide swiper-slide">
-              <img class="popup-card__duplicate-slide-content" src="@img/popup-card/image_7.jpg" alt="duplicate-slide">
-            </div>
-            <div class="popup-card__duplicate-slide swiper-slide">
-              <img class="popup-card__duplicate-slide-content" src="@img/popup-card/image_8.jpg" alt="duplicate-slide">
-            </div>
-          </div>
+        <div class="popup-card__duplicate-slider _swiper-settings">
+          <div class="swiper-wrapper" data-card-duplicate-slide></div>
         </div>
       </div>
     </div>
-
   </div>
 </section>

@@ -10,18 +10,20 @@ const FORM_CONST = {
   dataWrapper: "[data-form-input-js]", // Дата атрибут для оболочки инпута
   dataErrorText: "[data-form-error-js]", // Дата атрибут для поля куда выводится текст ошибки
   dataLoader: "[data-form-loader-js]", // Дата атрибут лоадера
-  URL: "", // URL по которому отправляется форма
+  URL: "http://instep.spb.ru/send.php", // URL по которому отправляется форма
 };
 
 export default class Form {
-  constructor(options) {
+  constructor(options, popupApi) {
     const { forms, popup, donePopup } = options;
     this.forms = forms;
 
     this.popup = popup; // хардкод (см onSuccess)
     this.donePopup = donePopup; // хардкод (см onSuccess)
 
+    this.popupApi = popupApi;
     this.formIsValid = false;
+    this.phoneIsDone = false;
     this.formHandler();
   }
 
@@ -46,6 +48,11 @@ export default class Form {
       case input.validity.tooShort:
         this.setInputError(input, tooShort);
         break;
+      case input.value.length < 18 && input.type === "tel":
+        this.setInputError(input, tooShort);
+        this.phoneIsDone = false;
+        console.log(input.value, input.value.length);
+        break;
       case input.validity.valueMissing:
         this.setInputError(input, valueMissing);
         break;
@@ -55,11 +62,10 @@ export default class Form {
       case !input.checked && input.type === "checkbox":
         this.setInputError(input, notChecked);
         break;
-      case input.value.length < 18 && input.type === "tel":
-        this.setInputError(input, tooShort);
-        break;
+
       default:
         this.removeInputError(input);
+        this.phoneIsDone = true;
         break;
     }
   };
@@ -98,6 +104,17 @@ export default class Form {
 
   serializeForm(formNode) {
     const formData = new FormData(formNode);
+
+    let comagicData = window.Comagic ? window.Comagic.getCredentials() : null;
+    for (let item in comagicData)
+      comagicData.hasOwnProperty(item) &&
+        formData.append(item, comagicData[item]);
+
+    // Отправка названия формы
+    formNode.getAttribute("name")
+      ? formData.append("type", formNode.getAttribute("name"))
+      : null;
+
     return formData;
   }
 
@@ -113,12 +130,15 @@ export default class Form {
       : (submitButton.disabled = false);
   }
 
-  metrics() {}
+  metrics() {
+    window.ym && ym(87892948, "reachGoal", "sendform");
+    window.VK && VK.Retargeting.Event("sendform");
+  }
 
   onSuccess(formNode) {
     this.metrics();
     formNode.reset();
-
+    formNode.setAttribute("data-send-status", "done");
     this.popup.classList.remove("_open"); // Хардкод
     this.donePopup.classList.add("_open"); // Хардкод
   }
@@ -126,15 +146,15 @@ export default class Form {
   onError(formNode, error) {
     const button = formNode.querySelector("button");
     button.setAttribute("data-button-error", "Ошибка отправки");
+    formNode.setAttribute("data-send-status", "error");
     return error?.message ? console.error(error.message) : null;
   }
 
   async sendData(data) {
     const { URL } = FORM_CONST;
 
-    return fetch(`${URL}/`, {
+    return fetch(`${URL}`, {
       method: "POST",
-      headers: { "Content-Type": "multipart/form-data" },
       body: data,
     });
   }
@@ -152,7 +172,7 @@ export default class Form {
     const { status, error } = await this.sendData(data);
     this.toggleLoader(event.target);
 
-    if (status === 404) {
+    if (status === 200) {
       this.onSuccess(event.target);
     } else {
       this.onError(event.target, error);
@@ -167,6 +187,7 @@ export default class Form {
 
     this.formIsValid = formNode.checkValidity();
     button.disabled = !this.formIsValid;
+    console.log(this.phoneIsDone);
 
     button.removeAttribute("data-button-error");
 

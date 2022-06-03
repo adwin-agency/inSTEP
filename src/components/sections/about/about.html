@@ -1,5 +1,5 @@
 <section class="about" data-scroll-to="community">
-  <div class="about__container _container">
+  <div class="about__container _container" id="interactive" data-selector=".about__image-icon">
     <div class="about__descritpion">
       <h2 class="about__title _h1">Стань частью <span class="about__title-accent _txt-accent-blue">чего-то
           большего</span></h2>
@@ -23,9 +23,9 @@
         <h3 class="about__social-text _txt-l">Следи за нами в соцсетях</h3>
       </div>
       <div class="about__image-box">
-        <img class="about__image _icon-Hashtag-Marker" src="@img/about/background.png" alt="humans">
-        <span class="about__image-icon _icon-Love-Marker"></span>
-        <span class="about__image-icon _icon-Hashtag-Marker"></span>
+        <img class="about__image _icon-Hashtag-Marker" data-src="@img/about/background.png" alt="humans" data-lazy>
+        <span class="about__image-icon _icon-Love-Marker" data-depth="0.2"></span>
+        <span class="about__image-icon _icon-Hashtag-Marker" data-depth="0.1"></span>
       </div>
       <div class="about__slider-box">
         <div class="about__slider">
@@ -47,6 +47,6 @@
         <button class="about__slider-button _slider-button _slider-button_right _icon-arrow-right"></button>
       </div>
     </div>
-    <img class="about__background-icon" src="@img/background-body/Rectangle 105.png" alt="">
+    <img class="about__background-icon" data-src="@img/background-body/Rectangle 105.png" alt="" data-lazy>
   </div>
 </section>

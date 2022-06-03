@@ -51,6 +51,8 @@
     &_end {
       bottom: -11%;
       right: -2%;
+      left: unset !important;
+      top: unset !important;
       @media (max-width: ($m+px)) {
         right: 0;
       }

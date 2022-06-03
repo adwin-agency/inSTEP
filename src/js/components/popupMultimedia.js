@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import Popups from "./popup.js";
 
 const POPUP_MULTIMEDIA_CLASSES = {
@@ -36,12 +37,10 @@ export default class PopupMultimedia extends Popups {
     } else {
       console.error(consoleAttributeError);
       console.dir(target);
-      const popup = this.findOpenPopup(target);
-      if (popup) {
-        setTimeout(() => {
-          this.close(popup);
-        }, 1);
-      }
+
+      setTimeout(() => {
+        this.close(this.currentPopup);
+      }, 1);
     }
   }
 
@@ -90,8 +89,7 @@ export default class PopupMultimedia extends Popups {
   }
 
   videoLoad(video) {
-    const { consoleVideoError, videoError, videoOnload } =
-      POPUP_MULTIMEDIA_CLASSES;
+    const { consoleVideoError, videoError, videoOnload } = POPUP_MULTIMEDIA_CLASSES;
 
     video.addEventListener("loadeddata", () => {
       if (video.readyState >= 2) {
@@ -108,8 +106,7 @@ export default class PopupMultimedia extends Popups {
   }
 
   imageLoad(image) {
-    const { consoleImageError, imageOnload, imageError } =
-      POPUP_MULTIMEDIA_CLASSES;
+    const { consoleImageError, imageOnload, imageError } = POPUP_MULTIMEDIA_CLASSES;
 
     // eslint-disable-next-line no-param-reassign
     image.onload = () => {
@@ -124,15 +121,16 @@ export default class PopupMultimedia extends Popups {
   }
 
   clearClass() {
-    const { imageOnload, imageError, videoError, videoOnload } =
-      POPUP_MULTIMEDIA_CLASSES;
+    const {
+      imageOnload, imageError, videoError, videoOnload,
+    } = POPUP_MULTIMEDIA_CLASSES;
 
     this.removeClass(
       this.popup,
       imageOnload,
       imageError,
       videoError,
-      videoOnload
+      videoOnload,
     );
   }
 

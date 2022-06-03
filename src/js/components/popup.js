@@ -9,24 +9,26 @@ export default class Popups {
     this.openButtons = [...document.querySelectorAll(`[${openAttribute}]`)];
     this.closeButtons = [...document.querySelectorAll(`[${closeAttribute}]`)];
     this.popups = [...document.querySelectorAll(`[${popupsAttribute}]`)];
+
     this.openListeners(this.openEvent);
     this.closeListeners(this.closeEvent);
+
+    this.currentPopup = null;
+    this.previousPopup = null;
   }
 
   findOpenPopup(target) {
     const findPopup = this.popups.find(
-      (popup) =>
-        popup.getAttribute(this.popupsAttribute) ===
-        target.getAttribute(this.openAttribute)
+      (popup) => popup.getAttribute(this.popupsAttribute)
+        === target.getAttribute(this.openAttribute),
     );
     return findPopup || null;
   }
 
   findClosePopup(target) {
     const findPopup = this.popups.find(
-      (popup) =>
-        popup.getAttribute(this.popupsAttribute) ===
-        target.getAttribute(this.closeAttribute)
+      (popup) => popup.getAttribute(this.popupsAttribute)
+        === target.getAttribute(this.closeAttribute),
     );
     return findPopup || null;
   }
@@ -35,6 +37,8 @@ export default class Popups {
     const { target } = event;
     const popup = this.findOpenPopup(target);
     if (popup) {
+      this.currentPopup = popup;
+      // Задержка при открытии поапа в попапе(без нее сбрасывается лок скрола)
       setTimeout(() => {
         this.open(popup);
       }, 0);
@@ -43,9 +47,9 @@ export default class Popups {
 
   closeEvent(event) {
     const { target } = event;
-
     const popup = this.findClosePopup(target);
     if (popup) {
+      this.previousPopup = popup;
       this.close(popup);
     }
   }
@@ -57,11 +61,9 @@ export default class Popups {
   }
 
   open(element) {
-    // setTimeout(() => {
     document.body.style.paddingRight = `${determineScrollWidth()}px`;
     element.classList.add("_open");
     document.body.classList.add("_fixed");
-    // }, 0);
   }
 
   openListeners(func) {
